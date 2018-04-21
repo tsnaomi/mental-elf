@@ -1,4 +1,3 @@
-from __future__ import print_function
 import requests
 import argparse
 from bs4 import BeautifulSoup
@@ -13,12 +12,9 @@ def main(args):
   page = requests.get(args.url)
   assert page.status_code == 200
   soup = BeautifulSoup(page.content, 'html.parser')
-  print("Overview:", end=' ')
-  print(soup.article.find_all('h2')[0].nextSibling.text)
-  print("Symptoms:", end=' ')
-  print(soup.article.find_all('h2')[1].nextSibling.text)
-  print("Causes:", end=' ')
-  print(soup.article.find_all('h2')[2].nextSibling.text)
+  print("Overview: " + soup.article.find_all('h2')[0].nextSibling.text)
+  print("Symptoms: " + soup.article.find_all('h2')[1].nextSibling.text)
+  print("Causes: " + soup.article.find_all('h2')[2].nextSibling.text)
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
