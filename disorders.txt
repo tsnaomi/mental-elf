@@ -1,0 +1,7 @@
+### This file lists the disorders that have been tried with the web scraper ###
+
+### Working Disorders ###
+Autism
+Bipolar Disorder
+
+### Failing Disorders ###
