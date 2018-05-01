@@ -1,2 +1,6 @@
 *.pyc
 .DS_store
+
+# DON'T FUTZ WITH THIS
+*/config.py
+*/dev.sh
