@@ -30,10 +30,10 @@ chronic depression
 This should be in the parent folder, not the intent folder.
 """
 
-import sys, os, random
+import os
 
-parent_file_dir = sys.argv[1]
-output_dir = sys.argv[2]
+parent_file_dir = './languageModel'
+output_dir = '.'
 
 def make_intents ():
 	allsub = os.listdir(parent_file_dir)
