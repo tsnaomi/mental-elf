@@ -1,0 +1,9 @@
+do a lot of people have {CONDITION}
+how many people have {CONDITION}
+how prevalent is {CONDITION}
+how common is {CONDITION}
+is {CONDITION} common
+is {CONDITION} prevalent
+how rare is {CONDITION}
+how many adults have {CONDITION}
+worldwide how many people have {CONDITION}
