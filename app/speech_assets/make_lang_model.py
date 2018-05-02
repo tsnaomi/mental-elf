@@ -32,11 +32,12 @@ This should be in the parent folder, not the intent folder.
 
 import os
 
-parent_file_dir = './languageModel'
+parent_file_dir = './'
 output_dir = '.'
 
 def make_intents ():
 	allsub = os.listdir(parent_file_dir)
+	import pdb; pdb.set_trace()
 	intent_texts = []
 	slot_types = set()
 	for folder in allsub:
@@ -116,7 +117,7 @@ def make_slot_values (path):
 def main ():
 	tp = ['\t\t"languageModel": {\n\t\t\t"invocationName": "mental elf",\n\t\t\t"intents": [']
 	tp += make_intents()
-	with open(output_dir+'/LanguageModel.json','w+') as f:
+	with open(output_dir+'/InteractionModel.json','w+') as f:
 		f.write('\n'.join(tp))
 	print "done!"
 
