@@ -63,6 +63,7 @@ ____
 #### EC2 alternatives
 
 - [Zappa](https://www.zappa.io/) (server-less Lambda-based Python web services)
+- [Heroku](https://www.heroku.com/) (cloud platform for web services)
 
 #### Tutorials
 
