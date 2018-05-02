@@ -48,7 +48,6 @@ ____
 
 - [Alexa Skills Kit](https://developer.amazon.com/docs/ask-overviews/build-skills-with-the-alexa-skills-kit.html)
 - [ASK CLI Command Reference](https://developer.amazon.com/docs/smapi/ask-cli-command-reference.html) (see `update-model`)
-- [Zappa](https://www.zappa.io/) (server-less Lambda-based Python web services)
 
 #### Flask
 
