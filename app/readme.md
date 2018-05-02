@@ -7,30 +7,30 @@ ____
 ### Getting started
 
 - Install the latest Python packages: `pip install -r requirements.txt`
-  - This requires pip version 9.0.3! Type `pip -V` to check your pip version.
+  - This requires pip version 9.0.3, so type `pip -V` to check your pip version. If you have a never version of pip, run `pip install pip==9.0.3` inside your project's activated virtualenv to downgrade pip.
 - Install ASK CLI: `npm install -g ask-cli` or `sudo npm install -g ask-cli`
 - Initialize ASK CLI: `ask init`
-- Go into your Alexa Skills Kit console and create a Mental Elf Dev skill (henceforth, dev-elf). This skill will only be used when <u>you</u> work on the project *locally*.
+- Go into your Alexa Skills Kit console and create a Mental Elf Dev skill (henceforth, dev-elf). This skill will only be used when *you* work on the project *locally*.
 - Place `config.py` and `dev.sh` inside your project's `app` directory. *Never* commit these files.
   - In `config.py`, fill in `SKILL_ID` with your dev-elf's skill ID.
   - No need to change anything in `dev.sh` (yet).
-- Watch [this video](https://www.youtube.com/watch?v=cXL8FDUag-s&feature=youtu.be) and set up **ngrok** with the Alexa Skills Kit. Don't worry about any of the other stuff in the video.
+- Watch [this video](https://www.youtube.com/watch?v=cXL8FDUag-s&feature=youtu.be) and learn how to set up **ngrok** with the Alexa Skills Kit. Don't worry about the other stuff in the video.
 
 ### Running the web app locally
 
 Inside the `app` directory:
 
 1. Run `source dev.sh` to imbue your environment with the necessary variables.
-   - Do this any terminal you
+   - Do this in any terminal window in which you'd like to interact with the web app.
 2. <u>If it is your first time serving the web app locally</u>, run `flask upload_model`
-3. In a separate terminal window, run `./ngrok http 5000` and use the given HTTPS url as the endpoint in dev-elf (in the Alexa Skills Kit console).
+3. In a separate terminal window, run `./ngrok http 5000` and use the given HTTPS url as dev-elf's endpoint in the Alexa Skills Kit console.
 4. Run `flask run` to start the web server locally. *Voila!* Now you can test out Mental Elf in the Alexa Skills Kit console.
 
 ____
 
-###Commands
+### Commands
 
-- Upload the interaction model: `flask upload_model`:
+- Upload the interaction model: `flask upload_model`
   - Upload the interaction model by filename: `flask upload_model --filename MODEL_FN`
   - Update the model before uploading it: `flask upload_model —update`
     - NOT IMPLEMENTED YET
@@ -42,7 +42,7 @@ ____
   - NOT IMPLEMENTED YET
 ____
 
-###Documentation + resources
+### Documentation + resources
 
 #### Alexa + AWS
 
