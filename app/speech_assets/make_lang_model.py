@@ -1,8 +1,8 @@
 """This is a small script for building a langauge model.
 
-The command line is python ./make_lang_model.py {FILEDIR} {OUTPUTDIR},
-where {FILEDIR} is a path to the folder where intent and slot
-information is stored, and each subfolder represents an intent.
+
+
+
 
 Within a single intent, there should be one file named "samples.txt",
 which contains a line separated list of sample utterances for the intent.
@@ -72,10 +72,17 @@ def one_intent (folder):
         slot_type = {}
         unique_types = set()
 
-    intent_text = ['\t\t\t\t{\n\t\t\t\t\t"name": "'+folder+'",','\t\t\t\t\t"slots": [']
+    intent_text = ['\t\t\t\t{\n\t\t\t\t\t"name": "'+ folder + '",' ]
+    if len(slot_type.keys())>0:
+        intent_text.append('\t\t\t\t\t"slots": [')
     for k,v in slot_type.iteritems():
-        intent_text.append('\t\t\t\t\t\t{\n\t\t\t\t\t\t\t"name": "'+k+'",\n\t\t\t\t\t\t\t"type": "'+v+'"\n\t\t\t\t\t\t}')
-    intent_text.append('\t\t\t\t\t],\n\t\t\t\t\t"samples": [')
+        intent_text.append('\t\t\t\t\t\t{\n\t\t\t\t\t\t\t"name": "'+k+'",\n\t\t\t\t\t\t\t"type": "'+v+'"\n\t\t\t\t\t\t},')
+	if len(slot_type.keys())>0:
+		last = intent_text[-1][:-1]
+		del intent_text[-1]
+		intent_text.append(last)
+		intent_text.append('\t\t\t\t\t],')
+    intent_text.append('\t\t\t\t\t"samples": [')
     for sample in all_samples:
         intent_text.append('\t\t\t\t\t\t"'+sample+'",')
     last = intent_text[-1][:-1]
@@ -103,8 +110,8 @@ def make_slot_values (path):
     values = g.split('\n\n')
     synonyms = [a.split('\n') for a in values]
     for nym in synonyms:
-        if len(nym)==1:
-            text.append('\t\t\t\t\t\t{\n\t\t\t\t\t\t\t"name": {\n\t\t\t\t\t\t\t\t"value": "'+nym[0]+'"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t,')
+        if len(nym)==1 or len(nym[1])<1:
+            text.append('\t\t\t\t\t\t{\n\t\t\t\t\t\t\t"name": {\n\t\t\t\t\t\t\t\t"value": "'+nym[0]+'"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},')
         else:
             text.append('\t\t\t\t\t\t{\n\t\t\t\t\t\t\t"name": {\n\t\t\t\t\t\t\t\t"value": "'+nym[0]+'",\n\t\t\t\t\t\t\t\t"synonyms": [')
             for n in nym[1:]:
