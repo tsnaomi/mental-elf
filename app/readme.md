@@ -33,7 +33,6 @@ ____
 - Upload the interaction model: `flask upload_model`
   - Upload the interaction model by filename: `flask upload_model --filename MODEL_FN`
   - Update the model before uploading it: `flask upload_model —-update`
-    - NOT IMPLEMENTED YET
 - Create the database tables: `flask initdb`
   - ***Warning***: This will initialize the remote database that everyone shares! <u>Don't do this willy-nilly</u>.
   - NOT IMPLEMENTED YET
