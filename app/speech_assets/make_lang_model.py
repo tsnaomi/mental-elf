@@ -138,12 +138,12 @@ def make_slot_values(path):
     return(text)
 
 
-def main():
+def main(filename=output_dir+'/InteractionModel.json'):
     tp = ['{\n\t"interactionModel": {']
     tp += ['\t\t"languageModel": {\n\t\t\t"invocationName": "mental elf",\n\t\t\t"intents": [']
     tp += make_intents()
     tp += ['\t}\n}']
-    with open(output_dir+'/InteractionModel.json', 'w+') as f:
+    with open(filename, 'w+') as f:
         f.write('\n'.join(tp))
 
 

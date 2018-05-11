@@ -122,7 +122,7 @@ def upload_model(filename, update):
     '''
     if update:
         click.echo('Updating model...')
-        update_model()
+        update_model(filename)
 
     cmd = 'ask api update-model -s %s -f %s -l en-US --debug' % \
         (app.config.get('SKILL_ID'), filename)
