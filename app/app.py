@@ -10,6 +10,7 @@ from flask_dynamo import Dynamo
 
 # local
 from core import NLG
+from speech_assets import update_model
 
 
 # app configuration -----------------------------------------------------------
@@ -121,11 +122,12 @@ def upload_model(filename, update):
     '''
     if update:
         click.echo('Updating model...')
-        # TODO: update interaction model
+        update_model()
 
     cmd = 'ask api update-model -s %s -f %s -l en-US --debug' % \
         (app.config.get('SKILL_ID'), filename)
     click.echo('Uploading %s...' % filename)
+
     sp.Popen(cmd.split(), stdout=sp.PIPE).communicate()
 
 
