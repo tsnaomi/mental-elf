@@ -28,20 +28,15 @@ Inside the `app` directory:
 
 ____
 
-### Commands
+### Flask Commands
 
+- Start the web server locally: `flask run`
 - Upload the interaction model: `flask upload_model`
   - Upload the interaction model by filename: `flask upload_model --filename MODEL_FN`
   - Update the model before uploading it: `flask upload_model —-update`
   - Thus, if you want to test out a new interaction model design without destroying the current `./speech_assets/InteractionModel.json`, you can run something like the following:
     - `flask upload_model --filename test-model.json --update`
     - This will build the interaction model and save it as `test-model.json`, then upload it to dev-elf!
-- Create the database tables: `flask initdb`
-  - ***Warning***: This will initialize the remote database that everyone shares! <u>Don't do this willy-nilly</u>.
-  - NOT IMPLEMENTED YET
-- Drop/delete the database tables: `flask dropdb`
-  - ***Warning***: This will delete the remote database that everyone shares! <u>Don't do this willy-nilly</u>.
-  - NOT IMPLEMENTED YET
 ____
 
 ### Documentation + resources

@@ -5,11 +5,10 @@ import subprocess as sp
 import click
 
 from flask import Flask, render_template
-from flask_ask import Ask, question, request, session, statement
-from flask_dynamo import Dynamo
+from flask_ask import Ask, question, session, statement
 
 # local
-from core import NLG
+from core import db  # NLG
 from speech_assets import update_model
 
 
@@ -17,19 +16,8 @@ from speech_assets import update_model
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
-
 ask = Ask(app, '/')  # Alexa integration
-db = None  # TODO: Dynamo(app)  # DynamoDB integration
-
-nlg = NLG(db)  # language generation module
-
-# database --------------------------------------------------------------------
-
-app.config['DYNAMO_TABLES'] = [
-    # INSERT SCHEMA HERE:
-    # this outlines the db's structure, but does not initialize it
-    # (we can optionally move this to a different file)
-]
+# nlg = NLG(db)  # language generation module
 
 
 # intents ---------------------------------------------------------------------
@@ -44,9 +32,42 @@ def launch():
     return question(text).simple_card(CARD_TITLE, text)
 
 
+# TODO: We should handle cases where CONDITION comes in as empty/None (e.g.,
+# try asking Mental Elf about "binge-eating")
 @ask.intent('GiveOverview', mapping={'condition': 'CONDITION'})
 def give_overview(condition):
-    text = render_template('overview', condition=condition)
+    try:
+        # get the provided condition from the database
+        condition = db.get_condition(condition)
+
+        # here is an example of how to store information across requests
+        # for a given session; when the session ends, this information will
+        # go away
+        session.attributes['current condition'] = condition.name
+
+        # if the current session has yet to involve any condition overviews,
+        # begin the overview with "Let's talk {{ condition }}" and, post-
+        # overview, ask the user if they would like to learn more about
+        # symptoms or treatments; otherwise, we can assume the user is familiar
+        # with what Mental Elf can do, so we can eliminate this chit chat
+        if session.attributes.get('overview given'):
+            text = condition.overview
+
+        else:
+            text = render_template(
+                'first_overview',
+                condition=condition.name,
+                overview=condition.overview,
+                )
+
+            # here is an example of how to store information across requests
+            # for a given session; when the session ends, this information will
+            # go away
+            session.attributes['overview given'] = True
+
+    # if there was no matching condition in the database, say so
+    except ValueError:
+        text = render_template('no_condition')
 
     return question(text).simple_card(CARD_TITLE, text)
 
