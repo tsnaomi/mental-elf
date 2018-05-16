@@ -1,4 +1,4 @@
-hello: Hello! And fuck you. I am Mental Elf. I like discussing mental health conditions and advocating for mental health awareness. I also enjoy long walks on the beach. What would you like to discuss today?
+hello: Hello! I am Mental Elf. I like discussing mental health conditions and advocating for mental health awareness. I also enjoy long walks on the beach. What would you like to discuss today?
 first_overview: Let's talk {{ condition }}. {{ overview }} Would you like to learn more about symptoms of and treatments for {{ condition }}?
 symptoms: Symptoms of {{ condition }} include X, Y, and Z.
 treatment: '{{ condition }} can be treated with sunlight.'
