@@ -23,15 +23,11 @@ def crawl(url, disorder):
 	 
 	# Extracting URLs from the attribute href in the <a> tags.
 	for tag in tags:
-		#print(disorder,type(disorder))
-		#print(tag.get('href'),type(tag.get('href')))
 		tag = tag.get('href')
-		#print(tag)	
 		if tag != None:
 			if disorder in tag :
 				print(base+tag)
 				return base+tag
-	print('disorder not found')
 	return ''
 
 if __name__ == '__main__':
