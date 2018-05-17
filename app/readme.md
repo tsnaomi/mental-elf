@@ -25,7 +25,13 @@ Inside the `app` directory:
 2. <u>If it is your first time serving the web app locally</u>, run `flask upload_model`
 3. In a separate terminal window, run `./ngrok http 5000` and use the given HTTPS url as dev-elf's endpoint in the Alexa Skills Kit console.
 4. Run `flask run` to start the web server locally. *Voila!* Now you can test out Mental Elf in the Alexa Skills Kit console.
-
+____
+### Training rasa nlu and rasa core
+read the readmes in respective folders
+____
+### Usage of rasa nlu and rasa core
+the models are loaded into app.py
+both can be independently used. However rasa core internally uses the trained NLU model, you just feed the text received from alexa raw text. See comments in the code
 ____
 ### Documentation + resources
 
