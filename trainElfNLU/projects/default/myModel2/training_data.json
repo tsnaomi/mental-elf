@@ -1,0 +1,1061 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "entities": [
+          {
+            "start": 17, 
+            "end": 27, 
+            "value": "depression", 
+            "entity": "ListOfConditions"
+          }, 
+          {
+            "start": 6, 
+            "end": 10, 
+            "value": "know", 
+            "entity": "search"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "wanna know about depression"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 10, 
+            "value": " know", 
+            "entity": "search"
+          }, 
+          {
+            "start": 17, 
+            "end": 24, 
+            "value": "A. S. D", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "wanna know about A. S. D"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 6, 
+            "end": 10, 
+            "value": "know", 
+            "entity": "search"
+          }, 
+          {
+            "start": 17, 
+            "end": 36, 
+            "value": "attachment disorder, bipolar disorder", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "wanna know about attachment disorder"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 6, 
+            "end": 10, 
+            "value": "know", 
+            "entity": "search"
+          }, 
+          {
+            "start": 17, 
+            "end": 23, 
+            "value": "autism", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "wanna know about autism"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 12, 
+            "value": "know", 
+            "entity": "search"
+          }, 
+          {
+            "start": 19, 
+            "end": 22, 
+            "value": "SAD", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "I wanna know about SAD"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 7, 
+            "end": 12, 
+            "value": " know", 
+            "entity": "search"
+          }, 
+          {
+            "start": 19, 
+            "end": 32, 
+            "value": "schizophrenia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "I wanna know about schizophrenia"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 25, 
+            "value": "P. T. S. D.", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "tell me about P. T. S. D."
+      }, 
+      {
+        "entities": [], 
+        "intent": "GiveOverview", 
+        "text": "can you tell me about post traumatic stress"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 27, 
+            "end": 40, 
+            "value": "schizophrenia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "give me the definition for schizophrenia"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 7, 
+            "end": 17, 
+            "value": "Tourette's", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "define Tourette's"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 34, 
+            "end": 47, 
+            "value": "alcohol abuse", 
+            "entity": "ListOfConditions"
+          }, 
+          {
+            "start": 19, 
+            "end": 29, 
+            "value": "definition", 
+            "entity": "search"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "will you give me a definition for alcohol abuse"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 0, 
+            "end": 21, 
+            "value": "postpartum depression", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "postpartum depression is what I want to know about substance disorder"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 18, 
+            "value": "anxiety", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "talk about anxiety"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 7, 
+            "end": 15, 
+            "value": "0. C. D.", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "what's 0. C. D."
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 15, 
+            "value": "anxiety", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "what 's anxiety"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 24, 
+            "value": "manic depression", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "what is manic depression"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 15, 
+            "end": 26, 
+            "value": "A. D. H. D.", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "can you define A. D. H. D."
+      }, 
+      {
+        "entities": [
+          {
+            "start": 31, 
+            "end": 47, 
+            "value": "eating disorders", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "can you give the definition of eating disorders"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 21, 
+            "end": 37, 
+            "value": "bipolar disorder", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveOverview", 
+        "text": "i want to talk about bipolar disorder"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 21, 
+            "end": 29, 
+            "value": "anorexia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "Give me symptoms for anorexia"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 25, 
+            "end": 29, 
+            "value": "pica", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "What are the symptoms of pica"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 21, 
+            "end": 28, 
+            "value": "bulimia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "What is a symptom of bulimia"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 24, 
+            "end": 29, 
+            "value": "panic", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "Tell me the symptoms of panic"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 22, 
+            "value": "postnatal", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "Symptoms for postnatal"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 16, 
+            "value": "schizophrenia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "is schizophrenia curable?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 26, 
+            "end": 33, 
+            "value": "anxiety", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "What is the treatment for anxiety"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 27, 
+            "end": 43, 
+            "value": "bipolar disorder", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "Tell me the treatments for bipolar disorder"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 7, 
+            "value": "pica", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "Is pica treatable?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 15, 
+            "end": 28, 
+            "value": "alcohol abuse", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "Treatments for alcohol abuse"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 22, 
+            "value": "O. C. D.", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "tell me about O. C. D. treatment"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 25, 
+            "end": 35, 
+            "value": "depression", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "How do I get treated for depression?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 11, 
+            "end": 22, 
+            "value": "P. T. S. D.", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "Talk about P. T. S. D. treatments"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 13, 
+            "value": "SAD", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "Do I have SAD?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 25, 
+            "end": 33, 
+            "value": "anorexia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "How can I know if I have anorexia?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 25, 
+            "end": 31, 
+            "value": "autism", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "What is an indication of autism ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 17, 
+            "end": 35, 
+            "value": "mental retardation", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "How prevalent is mental retardation?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 10, 
+            "value": "bulimia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "Is bulimia widespread?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 28, 
+            "end": 38, 
+            "value": "depression", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "How many people suffer from depression ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 24, 
+            "value": "alcoholism", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "How common is alcoholism?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 24, 
+            "end": 40, 
+            "value": "eating disorders", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "Do a lot of people have eating disorders?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 27, 
+            "end": 34, 
+            "value": "O. C. D", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "give me the treatments for O. C. D"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 20, 
+            "end": 27, 
+            "value": "anxiety", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "tell treatments for anxiety"
+      }, 
+      {
+        "entities": [], 
+        "intent": "greet", 
+        "text": "hello"
+      }, 
+      {
+        "entities": [], 
+        "intent": "greet", 
+        "text": "how are you ?"
+      }, 
+      {
+        "entities": [], 
+        "intent": "greet", 
+        "text": "hey"
+      }, 
+      {
+        "entities": [], 
+        "intent": "greet", 
+        "text": "hi"
+      }, 
+      {
+        "entities": [], 
+        "intent": "greet", 
+        "text": "Hello, how are you?"
+      }, 
+      {
+        "entities": [], 
+        "intent": "goodbye", 
+        "text": "talk to you later"
+      }, 
+      {
+        "entities": [], 
+        "intent": "goodbye", 
+        "text": "see ya"
+      }, 
+      {
+        "entities": [], 
+        "intent": "goodbye", 
+        "text": "see you"
+      }, 
+      {
+        "entities": [], 
+        "intent": "goodbye", 
+        "text": "thank you, good bye"
+      }, 
+      {
+        "entities": [], 
+        "intent": "goodbye", 
+        "text": "thank you, goodbye"
+      }, 
+      {
+        "entities": [], 
+        "intent": "goodbye", 
+        "text": "goodbye"
+      }, 
+      {
+        "entities": [], 
+        "intent": "goodbye", 
+        "text": "bye bye"
+      }, 
+      {
+        "entities": [], 
+        "intent": "goodbye", 
+        "text": "turn off"
+      }, 
+      {
+        "entities": [], 
+        "intent": "goodbye", 
+        "text": "bye !"
+      }, 
+      {
+        "entities": [], 
+        "intent": "goodbye", 
+        "text": "bye"
+      }, 
+      {
+        "entities": [], 
+        "intent": "greet", 
+        "text": "good morning"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 28, 
+            "end": 34, 
+            "value": "hunger", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "what are the treatments for hunger"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 7, 
+            "end": 15, 
+            "value": "anorexia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "how is anorexia treated ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 15, 
+            "end": 22, 
+            "value": "O. C. D", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "how do I treat O. C. D ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 23, 
+            "value": "treatable", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "is depression treatable ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 11, 
+            "end": 30, 
+            "value": "compulsive disorder", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "talk about compulsive disorder treatments"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 19, 
+            "end": 29, 
+            "value": "depression", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "I want to treat my depression"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 26, 
+            "end": 32, 
+            "value": "hunger", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "I want to get treated for hunger"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 24, 
+            "end": 34, 
+            "value": "P. T. S. D", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "tell the treatments for P. T. S. D"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 25, 
+            "end": 33, 
+            "value": "disorder", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "how can one cure bipolar disorder ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 16, 
+            "value": "schizo", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveTreatment", 
+        "text": "cures for schizo"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 19, 
+            "value": "bipolar disorder", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "is bipolar disorder common ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 26, 
+            "end": 33, 
+            "value": "bulimia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "what is the prevalence of bulimia ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 9, 
+            "value": "hunger", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "is hunger prevalent ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 18, 
+            "value": "pica", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "prevalence of pica"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 24, 
+            "value": "depression", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "how common is depression ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 23, 
+            "end": 31, 
+            "value": "insomnia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "tell the prevalence of insomnia"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 29, 
+            "end": 37, 
+            "value": "anorexia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "talk about the prevalence of anorexia"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 9, 
+            "end": 19, 
+            "value": "depression", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "check if depression is common"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 26, 
+            "end": 35, 
+            "value": "alcoholic", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "check how many people are alcoholic"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 20, 
+            "end": 30, 
+            "value": "gluttonous", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "are a lot of people gluttonous ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 18, 
+            "end": 24, 
+            "value": "autism", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "how widespread is autism ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 26, 
+            "end": 44, 
+            "value": "mental retardation", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GivePrevalence", 
+        "text": "show me the prevalence of mental retardation"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 20, 
+            "value": "anxiety", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "check me for anxiety"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 22, 
+            "end": 35, 
+            "value": "schizophrenia", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "what are the signs of schizophrenia ?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 9, 
+            "end": 17, 
+            "value": "gluttony", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "signs of gluttony"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 9, 
+            "end": 25, 
+            "value": "bipolar disorder", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "signs of bipolar disorder"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 0, 
+            "end": 10, 
+            "value": "alcholoism", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "alcholoism symptoms"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 0, 
+            "end": 7, 
+            "value": "O. C. D", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "O. C. D signs"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 0, 
+            "end": 8, 
+            "value": "suicidal", 
+            "entity": "ListOfConditions"
+          }
+        ], 
+        "intent": "GiveSymptoms", 
+        "text": "suicidal symptoms"
+      }
+    ], 
+    "entity_synonyms": [
+      {
+        "synonyms": [
+          "post traumatic stress disorder", 
+          "post-traumatic stress disorder", 
+          "post traumatic stress", 
+          "posttraumatic stress", 
+          "posttraumatic stress disorder", 
+          "post-traumatic stress"
+        ], 
+        "value": "P. T. S. D"
+      }, 
+      {
+        "synonyms": [
+          "NYC", 
+          "the big apple", 
+          "nyc"
+        ], 
+        "value": "New York City"
+      }, 
+      {
+        "synonyms": [
+          "asperger's", 
+          "autism spectrum disorder", 
+          "Rett's", 
+          "Asperger's"
+        ], 
+        "value": "A. S. D."
+      }, 
+      {
+        "synonyms": [
+          "seasonal affective disorder"
+        ], 
+        "value": "SAD"
+      }, 
+      {
+        "synonyms": [
+          "obsessive compulsive disorder"
+        ], 
+        "value": "O. C. D."
+      }, 
+      {
+        "synonyms": [
+          "substance abuse"
+        ], 
+        "value": "alcohol abuse"
+      }, 
+      {
+        "synonyms": [
+          "panic"
+        ], 
+        "value": "panic disorder"
+      }, 
+      {
+        "synonyms": [
+          "postnatal depression", 
+          "postnatal", 
+          "postpartum"
+        ], 
+        "value": "postpartum depression"
+      }, 
+      {
+        "synonyms": [
+          "Tourette's disorder"
+        ], 
+        "value": "Tourette's "
+      }, 
+      {
+        "synonyms": [
+          "attention deficit hyperactivity disorder", 
+          "A. D. D.", 
+          "attention deficit disorder"
+        ], 
+        "value": "A. D. H. D."
+      }, 
+      {
+        "synonyms": [
+          "anorexia nervosa", 
+          "anorexia", 
+          "binge eating", 
+          "bulimia", 
+          "bulimia nervosa", 
+          "pica"
+        ], 
+        "value": "eating disorders"
+      }
+    ], 
+    "regex_features": []
+  }
+}

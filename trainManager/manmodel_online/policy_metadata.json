@@ -1,0 +1,19 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": [
+        "ListOfConditions"
+      ]
+    }, 
+    "null": {
+      "slots": []
+    }
+  }, 
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble", 
+  "max_history": 2, 
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy", 
+    "rasa_core.policies.keras_policy.KerasPolicy"
+  ], 
+  "rasa_core": "0.8.6"
+}

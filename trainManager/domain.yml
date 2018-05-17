@@ -1,0 +1,32 @@
+slots:
+ ListOfConditions:
+  type: text
+
+entities:
+ - ListOfConditions
+
+intents:
+ - greet
+ - goodbye
+ - GiveOverview
+ - GiveSymptoms
+ - GiveTreatment
+ - GivePrevalence
+
+templates:
+ utter_ask_disorder:
+ - text: Which mental health condition do you want to talk about?
+ utter_goodbye:
+ - text: Talk to you later.
+ - text: Bye bye :(
+ utter_greet:
+ - text: Hello! How can I help?
+
+actions:
+ - utter_greet
+ - utter_goodbye
+ - utter_ask_disorder
+ - bot.ActionGiveOverview
+ - bot.ActionGiveSymptoms
+ - bot.ActionGiveTreatment
+ - bot.ActionGivePrevalence
