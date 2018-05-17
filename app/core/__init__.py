@@ -1,3 +1,5 @@
-__all__ = ['NLG', ]
+__all__ = ['NLG', 'db']
+
+import db
 
 from nlg import NLG

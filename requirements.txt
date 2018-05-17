@@ -11,7 +11,7 @@ cryptography==2.1.4
 docutils==0.14
 enum34==1.1.6
 Flask==0.12.1
-Flask-Ask==0.9.8
+Flask-Ask==0.9.7
 flask-dynamo==0.1.2
 futures==3.2.0
 idna==2.6
@@ -31,6 +31,4 @@ PyYAML==3.12
 rsa==3.4.2
 s3transfer==0.1.13
 six==1.11.0
-torch==0.3.1
-torchvision==0.2.0
 Werkzeug==0.14.1

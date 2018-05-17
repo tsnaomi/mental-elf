@@ -1,7 +1,8 @@
 hello: Hello! I am Mental Elf. I like discussing mental health conditions and advocating for mental health awareness. I also enjoy long walks on the beach. What would you like to discuss today?
-overview: Let's talk {{ condition }}. {{ condition }} is a mental health condition.
+first_overview: Let's talk {{ condition }}. {{ overview }} Would you like to learn more about symptoms of and treatments for {{ condition }}?
 symptoms: Symptoms of {{ condition }} include X, Y, and Z.
 treatment: '{{ condition }} can be treated with sunlight.'
 prevalence: '{{ condition }} is fairly common.'
+no_condition: I'm sorry, I do not recognize that condition.
 help: I am happy to discuss mental health with you. What can I help you with?
 bye: Thank you for chatting. Fare thee well.

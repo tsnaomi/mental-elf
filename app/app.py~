@@ -36,7 +36,6 @@ ask = Ask(app, '/')  # Alexa integration
 #]
 
 # test NLU Model
-## change to your dir paths
 model_directory_name = "/home/dhanush/Workspace/spring2018/ee596/Project_repo/trainElfNLU/projects/default/myModel2/"
 #metadata = Metadata.load(model_directory_name)
 #interpreter = Interpreter.load(metadata,RASAConfig("config_spacy.json"))

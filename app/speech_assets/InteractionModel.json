@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "mental elf",
+            "invocationName": "dev elf",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
