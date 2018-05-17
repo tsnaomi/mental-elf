@@ -27,21 +27,6 @@ Inside the `app` directory:
 4. Run `flask run` to start the web server locally. *Voila!* Now you can test out Mental Elf in the Alexa Skills Kit console.
 
 ____
-
-### Commands
-
-- Upload the interaction model: `flask upload_model`
-  - Upload the interaction model by filename: `flask upload_model --filename MODEL_FN`
-  - Update the model before uploading it: `flask upload_model —-update`
-    - NOT IMPLEMENTED YET
-- Create the database tables: `flask initdb`
-  - ***Warning***: This will initialize the remote database that everyone shares! <u>Don't do this willy-nilly</u>.
-  - NOT IMPLEMENTED YET
-- Drop/delete the database tables: `flask dropdb`
-  - ***Warning***: This will delete the remote database that everyone shares! <u>Don't do this willy-nilly</u>.
-  - NOT IMPLEMENTED YET
-____
-
 ### Documentation + resources
 
 #### Alexa + AWS
