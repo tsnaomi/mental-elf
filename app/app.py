@@ -117,20 +117,6 @@ def cancel():
 # custom CLI commands ---------------------------------------------------------
 
 @app.cli.command()
-def initdb():
-    '''Create the tables on DynamoDB.'''
-    db.create_all()
-    click.echo('Database initialized.\n\t--Mental Elf')
-
-
-@app.cli.command()
-def dropdb():
-    '''Delete the tables on DynamoDB.'''
-    db.destroy_all()
-    click.echo('Database bye bye.\n\t--Mental Elf')
-
-
-@app.cli.command()
 @click.option('--filename', default='./speech_assets/InteractionModel.json')
 @click.option('--update', is_flag=True)
 def upload_model(filename, update):
