@@ -1,6 +1,6 @@
 *.pyc
+*.py~
 *.swp
-*.~
 .DS_store
 
 # DON'T FUTZ WITH THIS
