@@ -25,9 +25,7 @@ Inside the `app` directory:
 2. <u>If it is your first time serving the web app locally</u>, run `flask upload_model`
 3. In a separate terminal window, run `./ngrok http 5000` and use the given HTTPS url as dev-elf's endpoint in the Alexa Skills Kit console.
 4. Run `flask run` to start the web server locally. *Voila!* Now you can test out Mental Elf in the Alexa Skills Kit console.
-
 ____
-
 ### Flask Commands
 
 - Start the web server locally: `flask run`
@@ -37,8 +35,15 @@ ____
   - Thus, if you want to test out a new interaction model design without destroying the current `./speech_assets/InteractionModel.json`, you can run something like the following:
     - `flask upload_model --filename test-model.json --update`
     - This will build the interaction model and save it as `test-model.json`, then upload it to dev-elf!
-____
 
+----
+### Training rasa nlu and rasa core
+read the readmes in respective folders
+
+### Usage of rasa nlu and rasa core
+the models are loaded into app.py
+both can be independently used. However rasa core internally uses the trained NLU model, you just feed the text received from alexa raw text. See comments in the code
+____
 ### Documentation + resources
 
 #### Alexa + AWS

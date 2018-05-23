@@ -1,0 +1,212 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "dev elf",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "nevermind"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "i'm not sure",
+                        "i don't understand",
+                        "please help",
+                        "help",
+                        "help me",
+                        "sorry",
+                        "i don't know"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "goodbye",
+                        "exit",
+                        "stop"
+                    ]
+                },
+                {
+                    "name": "RawText",
+                    "slots": [
+                        {
+                            "name": "Text",
+                            "type": "AMAZON.LITERAL"
+                        }
+                    ],
+                    "samples": [
+                        "{ok here we go speak up please speak mode and more and more till the end of the universe|Text}",
+                        "{please render this random uttered sentence|Text}",
+                        "{sample sample sample sample sample|Text}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "ListOfConditions",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "selective mutism"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Tourette's ",
+                                "synonyms": [
+                                    "Tourette's disorder"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mental retardation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "autism"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "attachment disorder"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "A. S. D.",
+                                "synonyms": [
+                                    "Asperger's",
+                                    "Rett's",
+                                    "asperger's",
+                                    "autism spectrum disorder"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "SAD",
+                                "synonyms": [
+                                    "seasonal affective disorder"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "schizophrenia"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P. T. S. D",
+                                "synonyms": [
+                                    "post traumatic stress",
+                                    "posttraumatic stress",
+                                    "post-traumatic stress",
+                                    "post traumatic stress disorder",
+                                    "posttraumatic stress disorder",
+                                    "post-traumatic stress disorder"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "postpartum depression",
+                                "synonyms": [
+                                    "postnatal",
+                                    "postnatal depression",
+                                    "postpartum"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "panic disorder",
+                                "synonyms": [
+                                    "panic"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bipolar disorder",
+                                "synonyms": [
+                                    "bipolar"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eating disorders",
+                                "synonyms": [
+                                    "bulimia",
+                                    "binge eating",
+                                    "bulimia nervosa",
+                                    "pica",
+                                    "anorexia nervosa",
+                                    "anorexia"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "substance dependence",
+                                "synonyms": [
+                                    "alcohol dependence"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "alcohol abuse",
+                                "synonyms": [
+                                    "substance abuse"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "O. C. D.",
+                                "synonyms": [
+                                    "obsessive compulsive disorder"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "A. D. H. D.",
+                                "synonyms": [
+                                    "attention deficit hyperactivity disorder",
+                                    "attention deficit disorder",
+                                    "A. D. D."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "manic depressive disorder"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "anxiety",
+                                "synonyms": [
+                                    "anxiety disorder"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "depression"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

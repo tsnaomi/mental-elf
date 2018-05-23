@@ -1,0 +1,61 @@
+{
+   "rasa_nlu_data": {
+      "common_examples": [
+         {
+            "text": "Tell me the symptoms of panic", 
+            "intent": "GiveSymptoms", 
+            "entities": [
+               {
+                  "start": 24, 
+                  "end": 29, 
+                  "value": "panic", 
+                  "entity": "ListOfConditions"
+               }
+            ]
+         }, 
+         {
+            "text": "What is an indication of autism ?", 
+            "intent": "GiveSymptoms", 
+            "entities": [
+               {
+                  "start": 25, 
+                  "end": 31, 
+                  "value": "autism", 
+                  "entity": "ListOfConditions"
+               }
+            ]
+         }, 
+         {
+            "text": "How prevalent is mental retardation?", 
+            "intent": "GivePrevalence", 
+            "entities": [
+               {
+                  "start": 17, 
+                  "end": 35, 
+                  "value": "mental retardation", 
+                  "entity": "ListOfConditions"
+               }
+            ]
+         }
+      ], 
+      "entity_synonyms": [
+         {
+            "synonyms": [
+               "panic"
+            ], 
+            "value": "panic disorder"
+         }, 
+         {
+            "synonyms": [
+               "bulimia", 
+               "binge eating", 
+               "bulimia nervosa", 
+               "pica", 
+               "anorexia nervosa", 
+               "anorexia"
+            ], 
+            "value": "eating disorders"
+         }
+      ]
+   }
+}
