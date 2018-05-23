@@ -20,6 +20,6 @@ Other notes:
 - At the moment, the intents in `app.py` request response utterances from the DialogueManager via `dm.get_utterance(session, bentent, sargs)`. 
   - `get_utterance()` should always return a string (or two strings, if including a reprompt).
 - In order to maintain the app's current behavior on the master branch, I mocked up the same functionality in `bs.py`. Feel free to change all of this inside the new branch!
-- User `dm.render_template()` to manage response strings. This has the same functionality as the `render_template` described in the [Flask-ASK](http://flask-ask.readthedocs.io/en/latest/responses.html#jinja-templates) docs. `templates.yaml` is located in the `app` directory.
+- Use `dm.render_template()` to manage response strings. This has the same functionality as the `render_template` described in the [Flask-ASK](http://flask-ask.readthedocs.io/en/latest/responses.html#jinja-templates) docs; `templates.yaml` is located in the `app` directory.
 
 Love, N
