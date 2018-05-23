@@ -97,6 +97,14 @@ def cancel():
 
     return statement(text).simple_card(CARD_TITLE, text)
 
+@ask.intent('Affirmative-Passive')
+def passive():
+    return elf_response(session, 'affirmative-passive',{})
+
+@ask.intent('Negative')
+def negative():
+    return elf_response(session,'negative',{})
+
 
 # @ask.intent('RawText', mapping={'text': 'Text'})
 # def do_NLU(text):
