@@ -26,7 +26,7 @@ Inside the `app` directory:
 3. In a separate terminal window, run `./ngrok http 5000` and use the given HTTPS url as dev-elf's endpoint in the Alexa Skills Kit console.
 4. Run `flask run` to start the web server locally. *Voila!* Now you can test out Mental Elf in the Alexa Skills Kit console.
 ____
-### Flask Commands
+### Flask commands
 
 - Start the web server locally: `flask run`
 - Upload the interaction model: `flask upload_model`

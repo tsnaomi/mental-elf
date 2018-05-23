@@ -1,5 +1,5 @@
-__all__ = ['NLG', 'db']
+__all__ = ['db', 'DialogueManager']
 
 import db
 
-from nlg import NLG
+from bs import DialogueManager
