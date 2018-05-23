@@ -20,6 +20,7 @@ class DialogueManager:
         try:
             # get the provided condition from the database
             condition = db.get_condition(condition)
+	    self.lastcondition=condition.name
 
             # if the current history has yet to involve any condition
             # overviews, begin the overview with "Let's talk {{ condition }}"
@@ -28,6 +29,7 @@ class DialogueManager:
             # user is familiar with what Mental Elf can do, so we can eliminate
             # this chit chat
             if self.history.get('overview given'):
+		self.history['last-sem-hub']=True
                 return condition.overview  # RETURNS UTTERANCE
 
             else:
@@ -35,7 +37,7 @@ class DialogueManager:
                 # user's requests for a given session; when the session ends,
                 # this information will go away
                 self.history['overview given'] = True  # RETURNS UTTERANCE
-
+		self.history['last-sem-hub']=True
                 return self.render_template(
                     'first_overview',
                     condition=condition.name,
@@ -53,6 +55,16 @@ class DialogueManager:
     def give_treatment(self, condition):
         '''Create a response utterance for the `give_treament` intent.'''
         return self.render_template('treatment', condition=condition)
+
+    def passive(self):
+	if self.history['last-sem-hub']==True:
+		self.history['last-sem-hub']=False
+		self.history['last-affirm']=True
+		return self.render_template('affirm-and-elaborate')
+	elif self.history['last-affirm']==True:
+		self.history['last-affirm']=False
+		self.history['last-elaborate']=True
+    		return self.render_template('elaborate',condition=self.lastcondition)
 
     def help(self):
         '''Create a response utterance for the `help` intent.'''
