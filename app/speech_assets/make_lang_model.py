@@ -64,6 +64,7 @@ def one_intent(folder):
     path = parent_file_dir + '/' + folder
     with open(path+'/samples.txt') as f:
         g = f.read()
+
     all_samples = [a for a in g.split('\n') if len(a) > 0]
 
     try:
@@ -92,19 +93,24 @@ def one_intent(folder):
     intent_text.append('\t\t\t\t\t"samples": [')
     for sample in all_samples:
         intent_text.append('\t\t\t\t\t\t"'+sample+'",')
-    last = intent_text[-1][:-1]
-    del intent_text[-1]
-    intent_text.append(last)
+    if all_samples:
+        last = intent_text[-1][:-1]
+        del intent_text[-1]
+        intent_text.append(last)
     intent_text.append('\t\t\t\t\t]\n\t\t\t\t},')
     return (intent_text, unique_types)
 
 
 def make_slot_types(slot_types):
+    slot_types.discard('AMAZON.LITERAL')
     text = []
     types = list(slot_types)
     for t in types:
         text.append('\t\t\t\t{\n\t\t\t\t\t"name": "'+t+'",\n\t\t\t\t\t"values": [')
-        text += make_slot_values(parent_file_dir+'/'+t+'.txt')
+        try:
+            text += make_slot_values(parent_file_dir+'/'+t+'.txt')
+        except IOError:
+            pass
     last = text[-1][:-1]
     del text[-1]
     text.append(last)

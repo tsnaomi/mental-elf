@@ -124,6 +124,20 @@
 						"what kind of therapy is used to treat {CONDITION}",
 						"what treatments are used to manage {CONDITION}"
 					]
+				},
+				{
+					"name": "RawText",
+					"slots": [
+						{
+							"name": "Text",
+							"type": "AMAZON.LITERAL"
+						}
+					],
+					"samples": [
+						"{ok here we go speak up please speak mode and more and more till the end of the universe|Text}",
+						"{please render this random uttered sentence|Text}",
+						"{sample sample sample sample sample|Text}"
+					]
 				}
 			],
 			"types": [
