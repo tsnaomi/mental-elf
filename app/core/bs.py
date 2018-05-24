@@ -42,8 +42,6 @@ class DialogueManager:
 
         # if there was no matching condition in the database, say so
         except ValueError:
-			self.history['lasttrigger']='overview'
-			self.history['slotfilling']=True
             return self.render_template('no_condition')  # RETURNS UTTERANCE
 
     def give_symptoms(self, condition):
@@ -68,7 +66,6 @@ class DialogueManager:
 
         # if there was no matching condition in the database, say so
         except ValueError:
-			self.history['lasttrigger']='symptoms'
             return self.render_template('no_condition')  # RETURNS UTTERANCE
 
     def give_treatment(self, condition):
@@ -93,7 +90,6 @@ class DialogueManager:
 
         # if there was no matching condition in the database, say so
         except ValueError:
-			self.history['lasttrigger']='treatment'
             return self.render_template('no_condition')  # RETURNS UTTERANCE
 
     def give_forum(self,condition):
@@ -118,7 +114,6 @@ class DialogueManager:
 
         # if there was no matching condition in the database, say so
         except ValueError:
-			self.history['lasttrigger']='forum'
             return self.render_template('no_condition')  # RETURNS UTTERANCE
 			
     def affirmativepassive(self):
@@ -172,7 +167,7 @@ class DialogueManager:
 			return self.help()
 
     def search_history(self):
-	'''is used to see if the user should be asked to continue talking about the same condition'''
+		'''is used to see if the user should be asked to continue talking about the same condition'''
 		if self.history.get('overview') and self.history.get('treatment') and self.history.get('symptoms') and self.history.get('forum'):
 			self.history['overview']=False
 			self.history['treatement']=False
@@ -187,7 +182,7 @@ class DialogueManager:
 		elif not self.history.get('treatment'):
 			return self.render_template('would-you-like',condition=self.history['lastcondition'],trigger='about the treatments for')
 		else:
-			return self.render_template('would-you-like',condition=self.history['lastcondition'],trigger='an experience from a person diagnosed with')	
+			return self.render_template('would-you-like',condition=self.history['lastcondition'],trigger='an experience from a person diagnosed with')
 
     def help(self):
         '''Create a response utterance for the `help` intent.'''

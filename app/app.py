@@ -101,9 +101,9 @@ def cancel():
 
     return statement(text).simple_card(CARD_TITLE, text)
 
-@ask.intent('Affirmative-Passive')
-def passive():
-    return elf_response(session, 'affirmative-passive',{})
+@ask.intent('AffirmativePassive')
+def affirmativepassive():
+    return elf_response(session, 'affirmativepassive',{})
 
 @ask.intent('Negative')
 def negative():
