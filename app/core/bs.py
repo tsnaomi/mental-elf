@@ -19,8 +19,8 @@ class DialogueManager:
         try:
             # get the provided condition from the database
             condition = db.get_condition(condition)
-	   	self.history['lastcondition']=condition.name
-		self.history['lasttrigger']='overview'	
+	    self.history['lastcondition']=condition.name
+	    self.history['lasttrigger']='overview'	
     	    if self.history['grounded']:
                 # if the current history has yet to involve any condition
                 # overviews, begin the overview with "Let's talk {{ condition }}"
