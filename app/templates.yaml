@@ -2,11 +2,26 @@ hello: Hello! I am Mental Elf. I like discussing mental health conditions and ad
 # first_overview: Let's talk {{ condition }}. {{ overview }} Would you like to learn more about symptoms of and treatments for {{ condition }}?
 # symptoms: Symptoms of {{ condition }} include X, Y, and Z.
 # treatment: '{{ condition }} can be treated with sunlight.'
-no_condition: I'm sorry, I do not recognize that condition.  Will you please tell me again what you'd like {{ trigger }}?
-bad_slot: I'm having trouble understanding which condition you'd like to talk about.  I'm still learning, so I may now know it.  Can you please rephrase?  You can also say \'Help\' to see what I can do.
+symptoms_1: From what I know, symptoms include {{ symptoms }}.
+symptoms_2: Symptoms of {{ condition }} include {{ symptoms }}.
+symptoms_3: According to my sources, symptoms of {{ condition }} can include {{ symptoms }}.
+treatment_1: {{ condition }} can be treated with {{ treatment }}
+treatment_2: Based on my research, it seems that {{ condition }} can be treated via {{ treatment }}.
+treatment_3: Options for treatment include {{ treatment }}.
+no_condition_1: I'm sorry, I do not recognize that condition.  Will you please tell me again what you'd like {{ trigger }}?
+no_condition_2: I'm not familiar with that topic. What would you like to hear {{ trigger }} about?
+bad_slot: I'm having trouble understanding which condition you'd like to talk about.  I'm still learning, so I may not know it.  Can you please rephrase?  You can also say \'Help\' to see what I can do.
 help: I am happy to discuss mental health with you. What can I help you with?  For example, you can say \'I want to know the treatments for P.T.S.D.?\' or \'What is it like to experience anxiety?\'.  I know things about treatments, symptoms, and features of mental health conditions, and I can tell you stories about people experiencing mental health problems.
 bye: Thank you for chatting. I hope you've learned something about mental health today.
-grounding: My understanding is that you'd like to hear {{ trigger }} {{ condition }}.  Is that right?
+grounding_1: My understanding is that you'd like to hear {{ trigger }} {{ condition }}.  Is that right?
+grounding_2: Did I hear you correctly, that you would like to discuss {{ trigger }} of {{ condition }}?
 affirm-and-elaborate: Thank you for sharing. I've heard many people share that opinion.  Would you like to hear more about this topic?
-generic_q:  Okay.  What would you like to talk about, friend?
+sounds-familiar: That sounds like sentiments I've heard from other users. Would you like to continue discussing this topic?
+generic_1: Okay.  What would you like to talk about, friend?
+generic_2: Which mental health condition would you like to discuss?
+generic_3: Tell me; what do you want to talk about?
 would-you-like:  Okay.  Would you like to hear {{ trigger }} {{ condition }}?
+how-about: How about we talk about {{ trigger }} {{ condition }}?
+
+
+#GROUNDING:
