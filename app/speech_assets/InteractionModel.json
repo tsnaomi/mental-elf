@@ -4,6 +4,42 @@
 			"invocationName": "mental elf",
 			"intents": [
 				{
+					"name": "Affirmative-Passive",
+					"samples": [
+						"yes",
+						"yeah",
+						"yes, please",
+						"okay",
+						"I would like that",
+						"I want to hear about that",
+						"Please elaborate",
+						"Please continue",
+						"Continue",
+						"I think that's really interesting",
+						"That's interesting",
+						"I think that's really depressing",
+						"I think that's sad",
+						"That's really sad",
+						"That's really cool",
+						"I didn't know that",
+						"I don't care about that",
+						"That's difficult",
+						"I imagine that's difficult to handle",
+						"Sounds painful",
+						"That's surprising",
+						"I imagine that's hard to live with",
+						"That seems hard to live them",
+						"I can't imagine living like that",
+						"I know people who have depression",
+						"One of my friends suffers from that",
+						"I knew that already",
+						"I don't know what to think of that",
+						"I wish I could change that",
+						"I wish there was a cure for that",
+						"I want to know how to help people going through that"
+					]
+				},
+				{
 					"name": "AMAZON.CancelIntent",
 					"samples": [
 						"nevermind"
@@ -27,6 +63,36 @@
 						"goodbye",
 						"exit",
 						"stop"
+					]
+				},
+				{
+					"name": "GiveForum",
+					"slots": [
+						{
+							"name": "CONDITION",
+							"type": "ListOfConditions"
+						}
+					],
+					"samples": [
+						"experience of {CONDITION}",
+						"tell me a story about a person with {CONDITION}",
+						"what is it like to have {CONDITION}",
+						"what is the experience of living with {CONDITION}",
+						"what is {CONDITION} like for average people",
+						"tell me about people with {CONDITION}",
+						"tell me an experience of people with {CONDITION}",
+						"do you have {CONDITION}",
+						"tell me a story from someone who has {CONDITION}",
+						"narrative from someone who has {CONDITION}",
+						"story of living with {CONDITION}",
+						"tell me of someone living with {CONDITION}",
+						"can you tell me an anecdote from someone who has {CONDITION}",
+						"anecdote about {CONDITION}",
+						"can you tell me about the experience of living with {CONDITION}",
+						"can you tell me what it's like to live with {CONDITION}",
+						"tell me the opinioin of someone who has {CONDITION}",
+						"give me a witness account of living with {CONDITION}",
+						"when people have {CONDITION} how does it affect their daily life"
 					]
 				},
 				{
@@ -103,6 +169,21 @@
 						"what is used to treat {CONDITION}",
 						"what kind of therapy is used to treat {CONDITION}",
 						"what treatments are used to manage {CONDITION}"
+					]
+				},
+				{
+					"name": "Negative",
+					"samples": [
+						"no",
+						"nah",
+						"nope",
+						"no thank you",
+						"I don't want to",
+						"That is not something I want",
+						"wrong",
+						"false",
+						"That's not something I want",
+						"That's not something I want to do"
 					]
 				},
 				{
