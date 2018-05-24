@@ -40,7 +40,8 @@ class DialogueManager:
 
         # if there was no matching condition in the database, say so
         except ValueError:
-            return self.render_template('no_condition')  # RETURNS UTTERANCE
+	    self.history['slotfilling']='overview'
+            return self.render_template('no_condition',trigger='an overview of')  # RETURNS UTTERANCE
 
     def give_symptoms(self, condition):
         '''Create a response utterance for the `give_overview` intent.'''
@@ -63,7 +64,8 @@ class DialogueManager:
 
         # if there was no matching condition in the database, say so
         except ValueError:
-            return self.render_template('no_condition')  # RETURNS UTTERANCE
+	    self.history['slotfilling']='symptoms'
+            return self.render_template('no_condition',trigger='the symptoms of')  # RETURNS UTTERANCE
 
     def give_treatment(self, condition):
         '''Create a response utterance for the `give_overview` intent.'''
@@ -86,7 +88,8 @@ class DialogueManager:
 
         # if there was no matching condition in the database, say so
         except ValueError:
-            return self.render_template('no_condition')  # RETURNS UTTERANCE
+	    self.history['slotfilling']='treatment'
+            return self.render_template('no_condition',trigger='the treatment options for')  # RETURNS UTTERANCE
 
     def give_forum(self,condition):
         '''Create a response utterance for the `give_overview` intent.'''
@@ -109,7 +112,8 @@ class DialogueManager:
 
         # if there was no matching condition in the database, say so
         except ValueError:
-            return self.render_template('no_condition')  # RETURNS UTTERANCE
+	    self.history['slotfilling']='forum'
+            return self.render_template('no_condition',trigger='a personal story about')  # RETURNS UTTERANCE
 			
     def affirmativepassive(self):
 	if self.history.get('last-sem-hub'):
@@ -167,6 +171,29 @@ class DialogueManager:
 	    self.history['lastcondition']=''
 	    return self.help()
 
+    def slot_filling(self,condition):
+	''' is used to fill in the slot when a condition was not found'''
+	# need something to keep track if they've just been here
+	try:
+	    condition=db.get_condition(condition)
+	except ValueError:
+	    self.history['slotfilling']='' # i don't know if i actually want this
+	    return self.render_template('bad_slot')
+	if self.history.get('slotfilling')=='overview':
+	    self.history['slotfilling']=''
+	    return self.give_overview(condition.name)
+	elif self.history.get('slotfilling')=='symptoms':
+	    self.history['slotfilling']=''
+	    return self.give_symptoms(condition.name)
+	elif self.history.get('slotfilling')=='treatment':
+	    self.history['slotfilling']=''
+	    return self.give_treatment(condition.name)
+	elif self.history.get('slotfilling')=='forum'):
+	    self.history['slotfilling']=''
+	    return self.give_forum(condition.name)
+	else: # the default is to give an overview
+	    self.history['slotfilling']=''
+	    return self.give_overview(condition.name)
     def search_history(self):
 	'''is used to see if the user should be asked to continue talking about the same condition'''
 	if self.history.get('overview') and self.history.get('treatment') and self.history.get('symptoms') and self.history.get('forum'):

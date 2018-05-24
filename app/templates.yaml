@@ -2,8 +2,9 @@ hello: Hello! I am Mental Elf. I like discussing mental health conditions and ad
 # first_overview: Let's talk {{ condition }}. {{ overview }} Would you like to learn more about symptoms of and treatments for {{ condition }}?
 # symptoms: Symptoms of {{ condition }} include X, Y, and Z.
 # treatment: '{{ condition }} can be treated with sunlight.'
-no_condition: I'm sorry, I do not recognize that condition.  Will you please tell me again what you'd like to talk about?
-help: I am happy to discuss mental health with you. What can I help you with?  For example, you can say 'I want to know the treatments for P.T.S.D.?' or 'What is it like to experience anxiety?'.
+no_condition: I'm sorry, I do not recognize that condition.  Will you please tell me again what you'd like {{ trigger }}?
+bad_slot: I'm having trouble understanding which condition you'd like to talk about.  I'm still learning, so I may now know it.  Can you please rephrase?  You can also say \'Help\' to see what I can do.
+help: I am happy to discuss mental health with you. What can I help you with?  For example, you can say \'I want to know the treatments for P.T.S.D.?\' or \'What is it like to experience anxiety?\'.  I know things about treatments, symptoms, and features of mental health conditions, and I can tell you stories about people experiencing mental health problems.
 bye: Thank you for chatting. I hope you've learned something about mental health today.
 grounding: My understanding is that you'd like to hear {{ trigger }} {{ condition }}.  Is that right?
 affirm-and-elaborate: Thank you for sharing. I've heard many people share that opinion.  Would you like to hear more about this topic?

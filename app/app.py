@@ -82,6 +82,11 @@ def give_forum(condition):
 
     return elf_response(session, 'give_forum', {'condition': condition})
 
+@ask.intent('SlotFilling', mapping={'condition': 'CONDITION'})
+def slot_filling(condition):
+
+    return elf_response(session, 'slot_filling', {'condition': condition})
+
 @ask.intent('AMAZON.HelpIntent')
 def help():
     ''' '''
