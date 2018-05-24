@@ -77,6 +77,10 @@ def give_treatment(condition):
     ''' '''
     return elf_response(session, 'give_treatment', {'condition': condition})
 
+@ask.intent('GiveForum', mapping={'condition': 'CONDITION'})
+def give_forum(condition):
+
+    return elf_response(session, 'give_forum', {'condition': condition})
 
 @ask.intent('AMAZON.HelpIntent')
 def help():
