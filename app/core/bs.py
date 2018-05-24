@@ -34,9 +34,9 @@ class DialogueManager:
 		    return condition.overview.split('.',1)[1]  # RETURNS UTTERANCE
 		else:
 		    return condition.overview.split('.',1)[0]
-		else: # haven't grounded yet
-   		    self.history['to grounding']=True	
-		    return self.render_template('grounding',condition=condition.name,trigger='an overview of')
+	    else: # haven't grounded yet
+   	        self.history['to grounding']=True	
+	        return self.render_template('grounding',condition=condition.name,trigger='an overview of')
 
         # if there was no matching condition in the database, say so
         except ValueError:
@@ -47,8 +47,8 @@ class DialogueManager:
         try:
             # get the provided condition from the database
             condition = db.get_condition(condition)    
-		self.history['lastcondition']=condition.name
-		self.history['lasttrigger']='symptoms'	
+	    self.history['lastcondition']=condition.name
+	    self.history['lasttrigger']='symptoms'	
     	    if self.history['grounded']:
 		self.history['last-sem-hub']=True
 		if self.history.get('elaborate'):
@@ -70,8 +70,8 @@ class DialogueManager:
         try:
             # get the provided condition from the database
             condition = db.get_condition(condition)
-	    	self.history['lastcondition']=condition.name
-		self.history['lasttrigger']='treatment'	
+	    self.history['lastcondition']=condition.name
+	    self.history['lasttrigger']='treatment'	
     	    if self.history['grounded']:
 		self.history['last-sem-hub']=True
 		if self.history.get('elaborate'):
@@ -93,8 +93,8 @@ class DialogueManager:
         try:
             # get the provided condition from the database
             condition = db.get_condition(condition)    
-		self.history['lastcondition']=condition.name
-		self.history['lasttrigger']='forum'	
+	    self.history['lastcondition']=condition.name
+	    self.history['lasttrigger']='forum'	
     	    if self.history['grounded']:
 		self.history['last-sem-hub']=True
 		if self.history.get('elaborate'):
@@ -128,22 +128,22 @@ class DialogueManager:
 	        self.history['to-grounding']=False
 	        self.history['grounded']=True
 		
-			if self.history.get('lasttrigger')=='overview':
-			    self.history['lasttrigger']=''
-	  		    return self.give_overview(self.history['lastcondition'])
-			elif self.history.get('lasttrigger')=='symptoms':
-		 	    self.history['lasttrigger']=''
-			    return self.give_symptoms(self.history['lastcondition'])
-			elif self.history.get('lasttrigger')=='treatment':
-			    self.history['lasttrigger']=''
-			    return self.give_treatment(self.history['lastcondition'])
-			elif self.history.get('lasttrigger')=='forum':
-			    self.history['lasttrigger']=''
-			    return self.give_forum(self.history['lastcondition'])
-			else:
-			    self.history['lastcondition']=''
-			    self.history['lasttrigger']=''
-			    return self.help()
+		if self.history.get('lasttrigger')=='overview':
+		    self.history['lasttrigger']=''
+	  	    return self.give_overview(self.history['lastcondition'])
+		elif self.history.get('lasttrigger')=='symptoms':
+		    self.history['lasttrigger']=''
+		    return self.give_symptoms(self.history['lastcondition'])
+		elif self.history.get('lasttrigger')=='treatment':
+		    self.history['lasttrigger']=''
+		    return self.give_treatment(self.history['lastcondition'])
+		elif self.history.get('lasttrigger')=='forum':
+		    self.history['lasttrigger']=''
+		    return self.give_forum(self.history['lastcondition'])
+		else:
+		    self.history['lastcondition']=''
+		    self.history['lasttrigger']=''
+		    return self.help()
  	    else:
 		self.history['lastcondition']=''
 		self.history['lasttrigger']=''
