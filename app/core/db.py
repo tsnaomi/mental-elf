@@ -32,6 +32,6 @@ def get_condition(condition_name):
         return Condition(**response['Items'].pop())
 
     except (TypeError, IndexError):
-        msg = 'Could not recognize the following condition: ' + condition_name
-
-        raise ValueError(msg)
+        #msg = 'Could not recognize the following condition: ' + condition_name
+	return None
+        #raise ValueError(msg)
