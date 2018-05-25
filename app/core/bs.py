@@ -189,7 +189,7 @@ class DialogueManager:
 	elif self.history.get('slotfilling')=='treatment':
 	    self.history['slotfilling']=''
 	    return self.give_treatment(condition.name)
-	elif self.history.get('slotfilling')=='forum'):
+	elif self.history.get('slotfilling')=='forum':
 	    self.history['slotfilling']=''
 	    return self.give_forum(condition.name)
 	else: # the default is to give an overview
