@@ -4,11 +4,11 @@
 			"invocationName": "mental elf",
 			"intents": [
 				{
-					"name": "Affirmative-Passive",
+					"name": "AffirmativePassive",
 					"samples": [
 						"yes",
 						"yeah",
-						"yes, please",
+						"yes please",
 						"okay",
 						"I would like that",
 						"I want to hear about that",
@@ -92,7 +92,8 @@
 						"can you tell me what it's like to live with {CONDITION}",
 						"tell me the opinioin of someone who has {CONDITION}",
 						"give me a witness account of living with {CONDITION}",
-						"when people have {CONDITION} how does it affect their daily life"
+						"when people have {CONDITION} how does it affect their daily life",
+						"tell me a story"
 					]
 				},
 				{
@@ -122,7 +123,14 @@
 						"definition of {CONDITION}",
 						"what is {CONDITION} like",
 						"tell me about {CONDITION}",
-						"what is {CONDITION}"
+						"what is {CONDITION}",
+						"overview of {CONDITION}",
+						"overview",
+						"give overview",
+						"definition",
+						"give definition",
+						"summary",
+						"give summary"
 					]
 				},
 				{
@@ -145,7 +153,11 @@
 						"will you give me the symptoms of {CONDITION}",
 						"can you tell me about the symptoms of {CONDITION}",
 						"how about the symptoms of {CONDITION}",
-						"{CONDITION} has what symptoms"
+						"{CONDITION} has what symptoms",
+						"symptoms",
+						"give symptoms",
+						"tell me symptoms",
+						"symptoms please"
 					]
 				},
 				{
@@ -168,7 +180,14 @@
 						"how do people treat {CONDITION}",
 						"what is used to treat {CONDITION}",
 						"what kind of therapy is used to treat {CONDITION}",
-						"what treatments are used to manage {CONDITION}"
+						"what treatments are used to manage {CONDITION}",
+						"treatment",
+						"give treatment",
+						"tell me treatment",
+						"tell me treatments",
+						"treatments",
+						"give treatments",
+						"possible treatments"
 					]
 				},
 				{
@@ -198,6 +217,33 @@
 						"{ok here we go speak up please speak mode and more and more till the end of the universe|Text}",
 						"{please render this random uttered sentence|Text}",
 						"{sample sample sample sample sample|Text}"
+					]
+				},
+				{
+					"name": "SlotFilling",
+					"slots": [
+						{
+							"name": "CONDITION",
+							"type": "ListOfConditions"
+						}
+					],
+					"samples": [
+						"wanna know about {CONDITION}",
+						"I wanna know about {CONDITION}",
+						"{CONDITION} is what  want to know",
+						"{CONDITION} is what I want to know about",
+						"I want to know about {CONDITION}",
+						"what are {CONDITION}",
+						"what's {CONDITION}",
+						"tell me bout {CONDITION}",
+						"{CONDITION} please",
+						"{CONDITION}",
+						"it's called {CONDITION}",
+						"can you tell me about {CONDITION}",
+						"the condition is {CONDITION}",
+						"what is {CONDITION} like",
+						"tell me about {CONDITION}",
+						"what is {CONDITION}"
 					]
 				}
 			],
