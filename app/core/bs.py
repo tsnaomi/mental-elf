@@ -22,7 +22,7 @@ class DialogueManager:
         condition = db.get_condition(condition)
 	if condition == None:
 	    self.history['slotfilling']='overview'
-	    return self.render_template(choose['no_condition_1','no_condition_2'],trigger='an overview of'),self.render_template('no-condition-r',trigger='an overview of')	
+	    return self.render_template(choose(['no_condition_1','no_condition_2']),trigger='an overview of'),self.render_template('no-condition-r',trigger='an overview of')	
         self.history['lastcondition']=condition.name
 	self.history['lasttrigger']='overview'
     	if 'grounded' in self.history.keys() and self.history['grounded']:
