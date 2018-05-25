@@ -17,3 +17,4 @@ can you tell me what it's like to live with {CONDITION}
 tell me the opinioin of someone who has {CONDITION}
 give me a witness account of living with {CONDITION}
 when people have {CONDITION} how does it affect their daily life
+tell me a story

@@ -17,3 +17,10 @@ definition of {CONDITION}
 what is {CONDITION} like
 tell me about {CONDITION}
 what is {CONDITION}
+overview of {CONDITION}
+overview
+give overview
+definition
+give definition
+summary
+give summary

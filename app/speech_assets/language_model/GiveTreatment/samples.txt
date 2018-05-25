@@ -10,3 +10,10 @@ how do people treat {CONDITION}
 what is used to treat {CONDITION}
 what kind of therapy is used to treat {CONDITION}
 what treatments are used to manage {CONDITION}
+treatment
+give treatment
+tell me treatment
+tell me treatments
+treatments
+give treatments
+possible treatments

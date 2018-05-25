@@ -17,32 +17,35 @@ class DialogueManager:
 
     def give_overview(self, condition):
         '''Create a response utterance for the `give_overview` intent.'''
-        try:
-            # get the provided condition from the database
-            condition = db.get_condition(condition)
-	    self.history['lastcondition']=condition.name
-	    self.history['lasttrigger']='overview'
-    	    if self.history['grounded']:
-                # if the current history has yet to involve any condition
-                # overviews, begin the overview with "Let's talk {{ condition }}"
-                # and, afterwards, ask the user if they would like to learn
-                # more about symptoms or treatments; otherwise, we can assume the
-                # user is familiar with what Mental Elf can do, so we can eliminate
-                # this chit chat
-		self.history['last-sem-hub']=True
-		if self.history.get('elaborate'):
-	  	    self.history['elaborate']=False
-		    return condition.overview.split('.',1)[1]  # RETURNS UTTERANCE
-		else:
-		    return condition.overview.split('.',1)[0]
-	    else: # haven't grounded yet
-   	        self.history['to grounding']=True
-	        return self.render_template(choose(['grounding_1', 'grounding_2']),condition=condition.name,trigger='an overview of')
+
+        # get the provided condition from the database
+        condition = db.get_condition(condition)
+	if condition == None:
+	    self.history['slotfilling']='overview'
+	    return self.render_template(choose['no_condition_1','no_condition_2'],trigger='an overview of')	
+        self.history['lastcondition']=condition.name
+	self.history['lasttrigger']='overview'
+    	if self.history['grounded']:
+            # if the current history has yet to involve any condition
+            # overviews, begin the overview with "Let's talk {{ condition }}"
+            # and, afterwards, ask the user if they would like to learn
+            # more about symptoms or treatments; otherwise, we can assume the
+            # user is familiar with what Mental Elf can do, so we can eliminate
+            # this chit chat
+	    self.history['last-sem-hub']=True
+	    if self.history.get('elaborate'):
+	        self.history['elaborate']=False
+		return condition.overview.split('.',1)[1]  # RETURNS UTTERANCE
+	    else:
+	        return condition.overview.split('.',1)[0]
+	else: # haven't grounded yet
+   	    self.history['to grounding']=True
+	    return self.render_template(choose(['grounding_1', 'grounding_2']),condition=condition.name,trigger='an overview of')
 
         # if there was no matching condition in the database, say so
-        except ValueError:
-	    self.history['slotfilling']='overview'
-            return self.render_template(choose(['no_condition_1', 'no_condition_2']),trigger='an overview of')  # RETURNS UTTERANCE
+        #except ValueError:
+	#    self.history['slotfilling']='overview'
+        #    return self.render_template(choose(['no_condition_1', 'no_condition_2']),trigger='an overview of')  # RETURNS UTTERANCE
 
     def give_symptoms(self, condition):
         '''Create a response utterance for the `give_overview` intent.'''
