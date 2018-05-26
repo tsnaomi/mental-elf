@@ -1,4 +1,4 @@
-hello: Hello! I am Mental Elf. I like discussing mental health conditions and advocating for mental health awareness. I also enjoy long walks on the beach. What would you like to discuss today?
+hello: Hello! I am Mental Elf. I like discussing mental health. What would you like to talk about today?
 hello-r: Is there something you want to talk about?  You could try saying 'Let's talk about Tourette's. 
 # first_overview: Let's talk {{ condition }}. {{ overview }} Would you like to learn more about symptoms of and treatments for {{ condition }}?
 # symptoms: Symptoms of {{ condition }} include X, Y, and Z.
