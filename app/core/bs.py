@@ -324,7 +324,7 @@ class DialogueManager:
 	    self.history['forum']=False
 	    self.history['lastcondition']=''
 	    self.history['last-elaborate']=False
-	    self.history['can-elaborate']=False
+	    self.history['can-elaborate']=True
 	    self.history['hist_match']=''
 	    self.history['grounded']=False
 	    return self.render_template(choose(['generic_1', 'generic_2', 'generic_3']))
