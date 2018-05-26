@@ -22,32 +22,38 @@ class DialogueManager:
         condition = db.get_condition(condition)
 	if condition == None:
 	    self.history['slotfilling']='overview'
-	    return self.render_template(choose(['no_condition_1','no_condition_2']),trigger='an overview of'),self.render_template('no-condition-r',trigger='an overview of')	
+	    return self.render_template(choose(['no_condition_1','no_condition_2']),trigger='an overview of'), self.render_template('no-condition-r',trigger='an overview of')	
         self.history['lastcondition']=condition.name
 	self.history['lasttrigger']='overview'
     	if 'grounded' in self.history.keys() and self.history['grounded']:
+
             # if the current history has yet to involve any condition
             # overviews, begin the overview with "Let's talk {{ condition }}"
             # and, afterwards, ask the user if they would like to learn
             # more about symptoms or treatments; otherwise, we can assume the
             # user is familiar with what Mental Elf can do, so we can eliminate
             # this chit chat
-	    self.history['last-sem-hub']=True
+	    
 	    if 'elaborate' in self.history.keys() and self.history.get('elaborate'):
 	        self.history['elaborate']=False
 		return condition.overview.split('.',1)[1]  # RETURNS UTTERANCE 
 	    else:
-		next_choice = choose(['opinion','elaborate_1','elaborate_2'])
-		if next_choice == 'elaborate_1' or 'elaborate_2':
+		self.history['last-sem-hub']=True
+		#next_choice = 'opinion'
+		next_choice = choose(['opinion', 'elaborate_1', 'elaborate_2']) #'opinion',
+		if next_choice == 'elaborate_1' or next_choice == 'elaborate_2':
+		    print('i shouldnt be here if opinion')
 		    self.history['last-sem-hub']=False
-		    self.history['last-elaborate']=True	
+		    self.history['last-affirm']=True
+		    #self.history['last-elaborate']=True	
 		    next_reprompt = self.render_template('elaborate-r')
 		else:
 		    next_reprompt = self.render_template('opinion-r')	
 		next_move = self.render_template(next_choice)
+		self.history['overview']=True
 	        return condition.overview.split('.',1)[0]+ ' ' + next_move, next_reprompt
 	else: # haven't grounded yet
-   	    self.history['to grounding']=True
+   	    self.history['to-grounding']=True
 	    return self.render_template(choose(['grounding_1', 'grounding_2']),condition=condition.name,trigger='an overview of'), self.render_template('grounding-r',condition=condition.name,trigger='an overview of')
         # if there was no matching condition in the database, say so
         #except ValueError:
@@ -64,23 +70,25 @@ class DialogueManager:
 	    self.history['lastcondition']=condition.name
 	    self.history['lasttrigger']='symptoms'
     	    if 'grounded' in self.history.keys() and self.history['grounded']:
-		self.history['last-sem-hub']=True
 		if 'elaborate' in self.history.keys() and self.history.get('elaborate'):
   		    self.history['elaborate']=False
 		    return condition.symptoms.split('.',1)[1]  # RETURNS UTTERANCE
 		else:
+		    self.history['last-sem-hub']=True
   		    next_choice = choose(['opinion','elaborate_1','elaborate_2'])
- 		    if next_choice == 'elaborate_1' or 'elaborate_2':
+ 		    if next_choice == 'elaborate_1' or next_choice == 'elaborate_2':
 		        self.history['last-sem-hub']=False
- 		        self.history['last-elaborate']=True
+			self.history['last-affirm']=True
+ 		        #self.history['last-elaborate']=True
 			next_reprompt = self.render_template('elaborate-r')
 		    else:
 			next_reprompt = self.render_template('opinion-r')		
 		    next_move = self.render_template(next_choice)
+		    self.history['symptoms']=True
 	            return condition.symptoms.split('.',1)[0]+' '+next_move, next_reprompt
 
   	    else: # haven't grounded yet
-		self.history['to grounding']=True
+		self.history['to-grounding']=True
 		return self.render_template(choose(['grounding_1', 'grounding_2']),condition=condition.name,trigger='the symptoms of'), self.render_template('grounding-r',condition=condition.name,trigger='the symptoms of')
 
         # if there was no matching condition in the database, say so
@@ -98,25 +106,26 @@ class DialogueManager:
 	    self.history['lastcondition']=condition.name
 	    self.history['lasttrigger']='treatment'
     	    if 'grounded' in self.history.keys() and self.history['grounded']:
-		self.history['last-sem-hub']=True
+
 		if 'elaborate' in self.history.keys() and self.history.get('elaborate'):
 		    self.history['elaborate']=False
-		    return condition.treatment.split('.',1)[1]  # RETURNS UTTERANCE
-		else:
-		    
-		    next_choice = choose(['opinion','elaborate_1','elaborate_2'])
-  		    if next_choice == 'elaborate_1' or 'elaborate_2':
+		    return condition.treatments.split('.',1)[1]  # RETURNS UTTERANCE
+		else:	
+                    self.history['last-sem-hub']=True	    
+		    next_choice = choose(['elaborate_1','elaborate_2']) #'opinion',
+  		    if next_choice == 'elaborate_1' or next_choice == 'elaborate_2':
 		        self.history['last-sem-hub']=False
-		        self.history['last-elaborate']=True
+			self.history['last-affirm']=True
+		        #self.history['last-elaborate']=True
 			next_reprompt = self.render_template('elaborate-r')
 		    else:
 			next_reprompt = self.render_template('opinion-r')		
 		    next_move = self.render_template(next_choice)
-	        
-		    return condition.treatment.split('.',1)[0]+' '+next_move, next_reprompt
+	            self.history['treatment']=True
+		    return condition.treatments.split('.',1)[0]+' '+next_move, next_reprompt
 
 	    else: # haven't grounded yet
-		self.history['to grounding']=True
+		self.history['to-grounding']=True
 		return self.render_template(choose(['grounding_1', 'grounding_2']),condition=condition.name,trigger='the treatment for'),self.render_template('grounding-r',condition=condition.name,trigger='the treatment for')
 
         # if there was no matching condition in the database, say so
@@ -134,25 +143,26 @@ class DialogueManager:
 	    self.history['lastcondition']=condition.name
 	    self.history['lasttrigger']='forum'
     	    if 'grounded' in self.history.keys() and self.history['grounded']:
-		self.history['last-sem-hub']=True
+
 		if 'elaborate' in self.history.keys() and self.history.get('elaborate'):
 		    self.history['elaborate']=False
 		    return condition.forum.split('.',1)[1]  # RETURNS UTTERANCE
 		else:
-
+		    self.history['last-sem-hub']=True
 		    next_choice = choose(['opinion','elaborate_1','elaborate_2'])
-		    if next_choice == 'elaborate_1' or 'elaborate_2':
+		    if next_choice == 'elaborate_1' or next_choice == 'elaborate_2':
 		        self.history['last-sem-hub']=False
-		        self.history['last-elaborate']=True
+			self.history['last-affirm']=True
+		        #self.history['last-elaborate']=True
 			next_reprommpt = self.render_template('elaborate-r')
 		    else:
 			next_reprompt = self.render_template('opinion-r')		
 		    next_move = self.render_template(next_choice)
-	       
+	            self.history['forum']=True
 		    return condition.forum.split('.',1)[0]+' '+next_move, next_reprompt
 
 	    else: # haven't grounded yet
-		self.history['to grounding']=True
+		self.history['to-grounding']=True
 		return self.render_template(choose(['grounding_1','grounding_2']),condition=condition.name,trigger='an experience of someone living with'), self.render_template('grounding-r',condition=condition.name,trigger='an experience of someone living with')
 
         # if there was no matching condition in the database, say so
@@ -161,11 +171,18 @@ class DialogueManager:
             return self.render_template(choose(['no_condition_1', 'no_condition_2']),trigger='a personal story about') ,self.render_template('no-condition-r',trigger='a personal story about') # RETURNS UTTERANCE
 
     def affirmativepassive(self):
+	print(self.history.get('to-grounding'))
+	print(self.history.get('lasttrigger'))
+	print(self.history.get('last-sem-hub'))
+	print(self.history.get('last-affirm'))
+	print(self.history.get('grounded'))
 	if 'last-sem-hub' in self.history.keys() and self.history.get('last-sem-hub'):
 	    self.history['last-sem-hub']=False
 	    self.history['last-affirm']=True
 	    return self.render_template(choose(['sounds-familiar', 'affirm-and-elaborate'])),self.render_template('affirm-r')
 	elif 'last-affirm' in self.history.keys() and self.history.get('last-affirm'):
+	    print('i should be here')
+            print(self.history.get('lasttrigger'))
 	    self.history['last-affirm']=False
 	    self.history['last-elaborate']=True
 	    historysearch = self.search_history()
@@ -197,7 +214,7 @@ class DialogueManager:
 	    elif 'lasttrigger' in self.history.keys() and self.history.get('lasttrigger')=='symptoms':
 	        self.history['lasttrigger']=''
 	        return self.give_symptoms(self.history['lastcondition'])
-	    elif 'lsttrigger' in self.history.keys() and self.history.get('lasttrigger')=='treatment':
+	    elif 'lasttrigger' in self.history.keys() and self.history.get('lasttrigger')=='treatment':
 	        self.history['lasttrigger']=''
 	        return self.give_treatment(self.history['lastcondition'])
 	    elif 'lasttrigger' in self.history.keys() and self.history.get('lasttrigger')=='forum':
@@ -214,7 +231,7 @@ class DialogueManager:
 	elif 'last-elaborate' in self.history.keys() and self.history.get('last-elaborate'):
 	    # send to sem hub from history search
 	    self.history['last-elaborate']=False
-	    self.history['grounded']=False
+	    self.history['grounded']=True
 	    if self.history.get('hist_match')=='overview':
 		return self.give_overview(self.history['lastcondition'])
 	    elif self.history.get('hist_match')=='symptoms':
@@ -298,13 +315,13 @@ class DialogueManager:
 	    self.history['hist_match']=''
 	    self.history['grounded']=False
 	    return self.render_template(choose(['generic_1', 'generic_2', 'generic_3']))
-	elif 'overview' in self.history.keys() and not self.history.get('overview'):
+	elif not 'overview' in self.history.keys() or not self.history.get('overview'):
 	    self.history['hist_match']='overview'
 	    return self.render_template(choose(['would-you-like', 'how-about']),condition=self.history['lastcondition'],trigger='an overview of')
-	elif 'symptoms' in self.history.keys() and not self.history.get('symptoms'):
+	elif not 'symptoms' in self.history.keys() or not self.history.get('symptoms'):
 	    self.history['hist_match']='symptoms'
 	    return self.render_template(choose(['would-you-like', 'how-about']),condition=self.history['lastcondition'],trigger='about the symptoms of')
-	elif 'treatment' in self.history.keys() and not self.history.get('treatment'):
+	elif not 'treatment' in self.history.keys() or not self.history.get('treatment'):
 	    self.history['hist_match']='treatment'
 	    return self.render_template(choose(['would-you-like', 'how-about']),condition=self.history['lastcondition'],trigger='about the treatments for')
 	else:
