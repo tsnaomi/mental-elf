@@ -35,4 +35,4 @@ opinion-r:  I can't hear you.  Do you have an opinion on that?  I'd love to know
 elaborate_1:  Would you like me to elaborate?
 elaborate_2:  Would you be interested in hearing more?
 elaborate-r: I didn't hear anything.  Should I elaborate on what we just talked about?
-#GROUNDING:
+continue_q:  Should we continue where we left off?

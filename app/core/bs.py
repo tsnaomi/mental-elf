@@ -42,7 +42,12 @@ class DialogueManager:
 		#next_choice = 'opinion'
 		next_choice = choose(['opinion', 'elaborate_1', 'elaborate_2']) #'opinion',
 		if next_choice == 'elaborate_1' or next_choice == 'elaborate_2':
-		    print('i shouldnt be here if opinion')
+		    self.history['can_elaborate'] = len(condition.overview.split('.',1))>1
+		    if not self.history.get('can_elaborate'):
+			next_choice = 'opinion'
+			next_reprompt = self.render_template('opinion-r')
+			break
+		    #print('i shouldnt be here if opinion')
 		    self.history['last-sem-hub']=False
 		    self.history['last-affirm']=True
 		    #self.history['last-elaborate']=True	
@@ -178,8 +183,14 @@ class DialogueManager:
 	print(self.history.get('grounded'))
 	if 'last-sem-hub' in self.history.keys() and self.history.get('last-sem-hub'):
 	    self.history['last-sem-hub']=False
-	    self.history['last-affirm']=True
-	    return self.render_template(choose(['sounds-familiar', 'affirm-and-elaborate'])),self.render_template('affirm-r')
+	    if 'can_elaborate' in self.history.keys() and self.history.get('can_elaborate'):
+	        self.history['last-affirm']=True
+	        return self.render_template(choose(['sounds-familiar', 'affirm-and-elaborate'])),self.render_template('affirm-r')
+	    else: # assume there's only 1 sent in the DB for that condition
+		self.history['last-affirm']=False
+		self.history['last-elaborrate']=True
+		historysearch = self.search_history()
+		return historysearch , self.render_template('continue_q')	 
 	elif 'last-affirm' in self.history.keys() and self.history.get('last-affirm'):
 	    print('i should be here')
             print(self.history.get('lasttrigger'))
