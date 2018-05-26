@@ -4,8 +4,8 @@ hello-r: Is there something you want to talk about?  You could try saying 'Let's
 # symptoms: Symptoms of {{ condition }} include X, Y, and Z.
 # treatment: '{{ condition }} can be treated with sunlight.'
 symptoms_1: From what I know, {{ symptoms }}.
-symptoms_2: Symptoms of {{ condition }} include {{ symptoms }}.
-symptoms_3: According to my sources, symptoms of {{ condition }} can include {{ symptoms }}.
+symptoms_2: Symptoms of {{ condition }} are {{ symptoms }}.
+symptoms_3: According to my sources, symptoms of {{ condition }} are {{ symptoms }}.
 treatment_1: \{{ condition }} can be treated with {{ treatment }}
 treatment_2: Based on my research, it seems that {{ condition }} can be treated via {{ treatment }}.
 treatment_3: Options for treatment include {{ treatment }}.
