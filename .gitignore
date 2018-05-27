@@ -1,8 +1,12 @@
 *.pyc
 *.py~
 *.swp
-.DS_store
+*.DS_store
 
 # DON'T FUTZ WITH THIS
+config.py
+dev.sh
 */config.py
 */dev.sh
+
+requirements.txt.old

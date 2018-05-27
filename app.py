@@ -77,15 +77,18 @@ def give_treatment(condition):
     ''' '''
     return elf_response(session, 'give_treatment', {'condition': condition})
 
+
 @ask.intent('GiveForum', mapping={'condition': 'CONDITION'})
 def give_forum(condition):
 
     return elf_response(session, 'give_forum', {'condition': condition})
 
+
 @ask.intent('SlotFilling', mapping={'condition': 'CONDITION'})
 def slot_filling(condition):
 
     return elf_response(session, 'slot_filling', {'condition': condition})
+
 
 @ask.intent('AMAZON.HelpIntent')
 def help():
@@ -106,13 +109,15 @@ def cancel():
 
     return statement(text).simple_card(CARD_TITLE, text)
 
+
 @ask.intent('AffirmativePassive')
 def affirmativepassive():
-    return elf_response(session, 'affirmativepassive',{})
+    return elf_response(session, 'affirmativepassive', {})
+
 
 @ask.intent('Negative')
 def negative():
-    return elf_response(session,'negative',{})
+    return elf_response(session, 'negative', {})
 
 
 # @ask.intent('RawText', mapping={'text': 'Text'})
