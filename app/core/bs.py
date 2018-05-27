@@ -156,7 +156,7 @@ class DialogueManager:
         '''Create a response utterance for the `give_overview` intent.'''
         try:
             # get the provided condition from the database
-            condition = db.get_condition(condition)    
+            condition = db.get_condition_for_anecdote(condition)    
 	    if condition == None:
 		raise ValueError('needs slot filling')
 	    self.history['lastcondition']=condition.name
