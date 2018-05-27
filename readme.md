@@ -2,7 +2,7 @@
 
 Let's talk.
 
-## *Mental Elf* web app
+## Web app
 
 Welcome to the Mental Elf Flask app!
 
