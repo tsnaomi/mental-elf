@@ -1,0 +1,26 @@
+wanna know about {CONDITION}
+I wanna know about {CONDITION}
+{CONDITION} is what  want to know
+{CONDITION} is what I want to know about
+I want to know about {CONDITION}
+what are {CONDITION}
+what's {CONDITION}
+tell me bout {CONDITION}
+give a definition of {CONDITION}
+give me a defnition of {CONDITION}
+will you give me a definition of {CONDITION}
+will you give me a definition for {CONDITION}
+can you give me a definition for {CONDITION}
+can you give me a definition of {CONDITION}
+can you tell me about {CONDITION}
+definition of {CONDITION}
+what is {CONDITION} like
+tell me about {CONDITION}
+what is {CONDITION}
+overview of {CONDITION}
+overview
+give overview
+definition
+give definition
+summary
+give summary

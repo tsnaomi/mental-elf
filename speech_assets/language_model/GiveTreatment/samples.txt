@@ -1,0 +1,19 @@
+treatment for {CONDITION}
+is {CONDITION} curable
+what are the treatment options for {CONDITION}
+what can I do to treat {CONDITION}
+how do you treat {CONDITION}
+how do doctors treat {CONDITION}
+what treatment is available for {CONDITION}
+how can I treat {CONDITION}
+how do people treat {CONDITION}
+what is used to treat {CONDITION}
+what kind of therapy is used to treat {CONDITION}
+what treatments are used to manage {CONDITION}
+treatment
+give treatment
+tell me treatment
+tell me treatments
+treatments
+give treatments
+possible treatments

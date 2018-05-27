@@ -1,0 +1,420 @@
+{
+	"interactionModel": {
+		"languageModel": {
+			"invocationName": "mental elf",
+			"intents": [
+				{
+					"name": "AffirmativePassive",
+					"samples": [
+						"yes",
+						"yeah",
+						"yes please",
+						"okay",
+						"I would like that",
+						"I want to hear about that",
+						"Please elaborate",
+						"Please continue",
+						"Continue",
+						"I think that's really interesting",
+						"That's interesting",
+						"I think that's really depressing",
+						"I think that's sad",
+						"That's really sad",
+						"That's really cool",
+						"I didn't know that",
+						"I don't care about that",
+						"That's difficult",
+						"I imagine that's difficult to handle",
+						"Sounds painful",
+						"That's surprising",
+						"I imagine that's hard to live with",
+						"That seems hard to live them",
+						"I can't imagine living like that",
+						"I know people who have depression",
+						"One of my friends suffers from that",
+						"I knew that already",
+						"I don't know what to think of that",
+						"I wish I could change that",
+						"I wish there was a cure for that",
+						"I want to know how to help people going through that"
+					]
+				},
+				{
+					"name": "AMAZON.CancelIntent",
+					"samples": [
+						"nevermind"
+					]
+				},
+				{
+					"name": "AMAZON.HelpIntent",
+					"samples": [
+						"i'm not sure",
+						"i don't understand",
+						"please help",
+						"help",
+						"help me",
+						"sorry",
+						"i don't know"
+					]
+				},
+				{
+					"name": "AMAZON.StopIntent",
+					"samples": [
+						"goodbye",
+						"exit",
+						"stop"
+					]
+				},
+				{
+					"name": "GiveForum",
+					"slots": [
+						{
+							"name": "CONDITION",
+							"type": "ListOfConditions"
+						}
+					],
+					"samples": [
+						"experience of {CONDITION}",
+						"tell me a story about a person with {CONDITION}",
+						"what is it like to have {CONDITION}",
+						"what is the experience of living with {CONDITION}",
+						"what is {CONDITION} like for average people",
+						"tell me about people with {CONDITION}",
+						"tell me an experience of people with {CONDITION}",
+						"do you have {CONDITION}",
+						"tell me a story from someone who has {CONDITION}",
+						"narrative from someone who has {CONDITION}",
+						"story of living with {CONDITION}",
+						"tell me of someone living with {CONDITION}",
+						"can you tell me an anecdote from someone who has {CONDITION}",
+						"anecdote about {CONDITION}",
+						"can you tell me about the experience of living with {CONDITION}",
+						"can you tell me what it's like to live with {CONDITION}",
+						"tell me the opinioin of someone who has {CONDITION}",
+						"give me a witness account of living with {CONDITION}",
+						"when people have {CONDITION} how does it affect their daily life",
+						"tell me a story"
+					]
+				},
+				{
+					"name": "GiveOverview",
+					"slots": [
+						{
+							"name": "CONDITION",
+							"type": "ListOfConditions"
+						}
+					],
+					"samples": [
+						"wanna know about {CONDITION}",
+						"I wanna know about {CONDITION}",
+						"{CONDITION} is what  want to know",
+						"{CONDITION} is what I want to know about",
+						"I want to know about {CONDITION}",
+						"what are {CONDITION}",
+						"what's {CONDITION}",
+						"tell me bout {CONDITION}",
+						"give a definition of {CONDITION}",
+						"give me a defnition of {CONDITION}",
+						"will you give me a definition of {CONDITION}",
+						"will you give me a definition for {CONDITION}",
+						"can you give me a definition for {CONDITION}",
+						"can you give me a definition of {CONDITION}",
+						"can you tell me about {CONDITION}",
+						"definition of {CONDITION}",
+						"what is {CONDITION} like",
+						"tell me about {CONDITION}",
+						"what is {CONDITION}",
+						"overview of {CONDITION}",
+						"overview",
+						"give overview",
+						"definition",
+						"give definition",
+						"summary",
+						"give summary"
+					]
+				},
+				{
+					"name": "GiveSymptoms",
+					"slots": [
+						{
+							"name": "CONDITION",
+							"type": "ListOfConditions"
+						}
+					],
+					"samples": [
+						"what are the symptoms of {CONDITION}",
+						"symptoms of {CONDITION}",
+						"what symptoms does {CONDITION} have",
+						"what are the characteristic symptoms of {CONDITION}",
+						"symptoms for {CONDITION}",
+						"tell me about the symptoms of {CONDITION}",
+						"let's talk about the symptoms of {CONDITION}",
+						"give me the symptoms of {CONDITION}",
+						"will you give me the symptoms of {CONDITION}",
+						"can you tell me about the symptoms of {CONDITION}",
+						"how about the symptoms of {CONDITION}",
+						"{CONDITION} has what symptoms",
+						"symptoms",
+						"give symptoms",
+						"tell me symptoms",
+						"symptoms please"
+					]
+				},
+				{
+					"name": "GiveTreatment",
+					"slots": [
+						{
+							"name": "CONDITION",
+							"type": "ListOfConditions"
+						}
+					],
+					"samples": [
+						"treatment for {CONDITION}",
+						"is {CONDITION} curable",
+						"what are the treatment options for {CONDITION}",
+						"what can I do to treat {CONDITION}",
+						"how do you treat {CONDITION}",
+						"how do doctors treat {CONDITION}",
+						"what treatment is available for {CONDITION}",
+						"how can I treat {CONDITION}",
+						"how do people treat {CONDITION}",
+						"what is used to treat {CONDITION}",
+						"what kind of therapy is used to treat {CONDITION}",
+						"what treatments are used to manage {CONDITION}",
+						"treatment",
+						"give treatment",
+						"tell me treatment",
+						"tell me treatments",
+						"treatments",
+						"give treatments",
+						"possible treatments"
+					]
+				},
+				{
+					"name": "Negative",
+					"samples": [
+						"no",
+						"nah",
+						"nope",
+						"no thank you",
+						"I don't want to",
+						"That is not something I want",
+						"wrong",
+						"false",
+						"That's not something I want",
+						"That's not something I want to do"
+					]
+				},
+				{
+					"name": "RawText",
+					"slots": [
+						{
+							"name": "Text",
+							"type": "AMAZON.LITERAL"
+						}
+					],
+					"samples": [
+						"{ok here we go speak up please speak mode and more and more till the end of the universe|Text}",
+						"{please render this random uttered sentence|Text}",
+						"{sample sample sample sample sample|Text}"
+					]
+				},
+				{
+					"name": "SlotFilling",
+					"slots": [
+						{
+							"name": "CONDITION",
+							"type": "ListOfConditions"
+						}
+					],
+					"samples": [
+						"wanna know about {CONDITION}",
+						"I wanna know about {CONDITION}",
+						"{CONDITION} is what  want to know",
+						"{CONDITION} is what I want to know about",
+						"I want to know about {CONDITION}",
+						"what are {CONDITION}",
+						"what's {CONDITION}",
+						"tell me bout {CONDITION}",
+						"{CONDITION} please",
+						"{CONDITION}",
+						"it's called {CONDITION}",
+						"can you tell me about {CONDITION}",
+						"the condition is {CONDITION}",
+						"what is {CONDITION} like",
+						"tell me about {CONDITION}",
+						"what is {CONDITION}"
+					]
+				}
+			],
+			"types": [
+				{
+					"name": "ListOfConditions",
+					"values": [
+						{
+							"name": {
+								"value": "selective mutism"
+							}
+						},
+						{
+							"name": {
+								"value": "Tourette's",
+								"synonyms": [
+									"Tourette's disorder"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "mental retardation"
+							}
+						},
+						{
+							"name": {
+								"value": "autism"
+							}
+						},
+						{
+							"name": {
+								"value": "attachment disorder"
+							}
+						},
+						{
+							"name": {
+								"value": "A. S. D.",
+								"synonyms": [
+									"Asperger's",
+									"Rett's",
+									"asperger's",
+									"autism spectrum disorder",
+									"spectrum disorder"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "S. A. D",
+								"synonyms": [
+									"seasonal affective disorder"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "schizophrenia"
+							}
+						},
+						{
+							"name": {
+								"value": "P. T. S. D.",
+								"synonyms": [
+									"post traumatic stress",
+									"posttraumatic stress",
+									"post-traumatic stress",
+									"post traumatic stress disorder",
+									"post-traumatic stress disorder"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "postpartum depression",
+								"synonyms": [
+									"postnatal",
+									"postnatal depression",
+									"postpartum"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "panic disorder",
+								"synonyms": [
+									"panic"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "bipolar disorder",
+								"synonyms": [
+									"bipolar"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "eating disorders",
+								"synonyms": [
+									"bulimia",
+									"binge eatin",
+									"bulimia nervosa",
+									"anorexia",
+									"anorexia nervosa"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "substance abuse",
+								"synonyms": [
+									"alcohol abuse"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "substance dependence",
+								"synonyms": [
+									"alcohol dependence"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "O. C. D.",
+								"synonyms": [
+									"obsessive compulsive disorder",
+									"obsessive compulsive"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "A. D. H. D.",
+								"synonyms": [
+									"attention deficit hyperactivity disorder",
+									"attention deficit disorder",
+									"A. D. D.",
+									"attention deficit"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "manic depressive disorder",
+								"synonyms": [
+									"manic depressive"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "anxiety",
+								"synonyms": [
+									"anxiety disorder",
+									"general anxiety"
+								]
+							}
+						},
+						{
+							"name": {
+								"value": "depresssion"
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+}
