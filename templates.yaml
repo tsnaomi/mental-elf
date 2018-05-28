@@ -10,7 +10,7 @@ treatment_1: \{{ condition }} can be treated with {{ treatment }}
 treatment_2: Based on my research, it seems that {{ condition }} can be treated via {{ treatment }}.
 treatment_3: Options for treatment include {{ treatment }}.
 no_condition_1: I'm sorry, I did not recognize a condition.  Will you please tell me again what you'd like {{ trigger }}?
-no_condition_2: I'm didn't understand a condition you'd like to discuss. What would you like to hear {{ trigger }}?
+no_condition_2: I didn't hear a condition in what you said. What would you like to hear {{ trigger }}?
 no-condition-r: I didn't understand the last thing you said.  Can you tell me which condition you'd like {{ trigger }}?s
 bad_slot: I'm having trouble understanding which condition you'd like to talk about.  I'm still learning, so I may not know it.  Can you please rephrase?  You can also say 'Help' to see what I can do.
 bad-slot-r: Are you still there?  I didn't hear which condition you'd like to talk about.  You could choose depression, multiple personality disorder, autism, or many other conditions.
