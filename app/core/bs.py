@@ -47,7 +47,8 @@ class DialogueManager:
 			  next_choice = 'opinion'
 			  next_reprompt = self.render_template('opinion-r')
 			  next_move = self.render_template(next_choice)
-			  return condition.overview.split('.',1)[0]+ ' ' + next_move, next_reprompt
+			  self.history['overview']=True
+			  return condition.overview.split('.',1)[0]+ '. ' + next_move, next_reprompt
 		    print('i shouldnt be here if opinion')
 		    self.history['last-sem-hub']=False
 		    self.history['last-affirm']=True
@@ -57,7 +58,7 @@ class DialogueManager:
 		    next_reprompt = self.render_template('opinion-r')	
 		next_move = self.render_template(next_choice)
 		self.history['overview']=True
-	        return condition.overview.split('.',1)[0]+ ' ' + next_move, next_reprompt
+	        return condition.overview.split('.',1)[0]+ '. ' + next_move, next_reprompt
 	else: # haven't grounded yet
    	    self.history['to-grounding']=True
 	    return self.render_template(choose(['grounding_1', 'grounding_2']),condition=condition.name,trigger='an overview of'), self.render_template('grounding-r',condition=condition.name,trigger='an overview of')
@@ -88,7 +89,8 @@ class DialogueManager:
 			    next_choice = 'opinion'
 			    next_reprompt = self.render_template('opinion-r')
 			    next_move = self.render_template(next_choice)
-			    return condition.symptoms.split('.',1)[0]+ ' ' + next_move, next_reprompt
+			    self.history['symptoms']=True
+			    return condition.symptoms.split('.',1)[0]+ '. ' + next_move, next_reprompt
 
 		        self.history['last-sem-hub']=False
 			self.history['last-affirm']=True
@@ -98,7 +100,7 @@ class DialogueManager:
 			next_reprompt = self.render_template('opinion-r')		
 		    next_move = self.render_template(next_choice)
 		    self.history['symptoms']=True
-	            return condition.symptoms.split('.',1)[0]+' '+next_move, next_reprompt
+	            return condition.symptoms.split('.',1)[0]+'. '+next_move, next_reprompt
 
   	    else: # haven't grounded yet
 		self.history['to-grounding']=True
@@ -132,7 +134,8 @@ class DialogueManager:
 			    next_choice = 'opinion'
 			    next_reprompt = self.render_template('opinion-r')
 			    next_move = self.render_template(next_choice)
-			    return condition.treatments.split('.',1)[0]+ ' ' + next_move, next_reprompt
+			    self.history['treatment']=True
+			    return condition.treatments.split('.',1)[0]+ '. ' + next_move, next_reprompt
 		        self.history['last-sem-hub']=False
 			self.history['last-affirm']=True
 		        #self.history['last-elaborate']=True
@@ -141,7 +144,7 @@ class DialogueManager:
 			next_reprompt = self.render_template('opinion-r')		
 		    next_move = self.render_template(next_choice)
 	            self.history['treatment']=True
-		    return condition.treatments.split('.',1)[0]+' '+next_move, next_reprompt
+		    return condition.treatments.split('.',1)[0]+'. '+next_move, next_reprompt
 
 	    else: # haven't grounded yet
 		self.history['to-grounding']=True
@@ -156,7 +159,7 @@ class DialogueManager:
         '''Create a response utterance for the `give_overview` intent.'''
         try:
             # get the provided condition from the database
-            condition = db.get_condition(condition)    
+            condition = db.get_condition_for_anecdote(condition)    
 	    if condition == None:
 		raise ValueError('needs slot filling')
 	    self.history['lastcondition']=condition.name
@@ -165,26 +168,27 @@ class DialogueManager:
 
 		if 'elaborate' in self.history.keys() and self.history.get('elaborate'):
 		    self.history['elaborate']=False
-		    return condition.forum.split('.',1)[1]  # RETURNS UTTERANCE
+		    return condition.forum.split('.',3)[3]  # RETURNS UTTERANCE
 		else:
 		    self.history['last-sem-hub']=True
-		    next_choice = choose(['opinion','elaborate_1','elaborate_2'])
+		    next_choice = choose(['elaborate_1','elaborate_2'])
 		    if next_choice == 'elaborate_1' or next_choice == 'elaborate_2':
 		    	self.history['can-elaborate']= len(condition.forum.split('.',1))>1
 		    	if not self.history.get('can-elaborate') or not len(condition.forum.split('.',1)[1]) > 1:
 			    next_choice = 'opinion'
 			    next_reprompt = self.render_template('opinion-r')
 			    next_move = self.render_template(next_choice)
-			    return condition.forum.split('.',1)[0]+ ' ' + next_move, next_reprompt
+			    self.history['forum']=True
+			    return '.'.join(condition.forum.split('.',3)[:3])+ '. ' + next_move, next_reprompt
 		        self.history['last-sem-hub']=False
 			self.history['last-affirm']=True
 		        #self.history['last-elaborate']=True
-			next_reprommpt = self.render_template('elaborate-r')
+			next_reprompt = self.render_template('elaborate-r')
 		    else:
 			next_reprompt = self.render_template('opinion-r')		
 		    next_move = self.render_template(next_choice)
 	            self.history['forum']=True
-		    return condition.forum.split('.',1)[0]+' '+next_move, next_reprompt
+		    return '.'.join(condition.forum.split('.',3)[:3])+'. '+next_move, next_reprompt
 
 	    else: # haven't grounded yet
 		self.history['to-grounding']=True
