@@ -20,8 +20,20 @@ bye: Thank you for chatting. I hope you've learned something about mental health
 grounding_1: My understanding is that you'd like to hear {{ trigger }} {{ condition }}.  Is that right?
 grounding_2: Did I hear you correctly, that you would like {{ trigger }} {{ condition }}?
 grounding-r: Sorry, I didn't hear anything.  Should we talk about {{ condition }} {{ trigger }}?
-affirm-and-elaborate: Thank you for sharing. I've heard many people share that opinion.  Would you like to hear more about this topic?
-sounds-familiar: That sounds like sentiments I've heard from other users. Would you like to continue discussing this topic?
+
+# these are backoff when sentiment is not given.
+affirm-and-elaborate: Thank you for sharing. I've heard many people share that opinion. 
+sounds-familiar: That sounds like sentiments I've heard from other users.
+
+# use these (optionally along with elaborate_1 and elaborate_2) to affirm opinions
+positive_1: Although dealing with mental health is difficult, there is hope and lots of pathways for patients to explore.  I'm glad you feel positive.
+positive_2: I'm glad to hear you say that.
+positive_3: Staying positive is a healthy approach when talking about mental health.  Thank you for being a role model.
+
+negative_1: Many people find it hard to grapple with the emotions of talking about mental health.  I'm glad we have each other to talk to.
+negative_2: I understand it can be sad to talk about these kinds of things, but I'm glad you're here with me.
+negative_3: I'm sorry that you are upset about this topic.  Talking can be difficult, but also helpful in understanding mental health.
+
 affirm-r: I didn't hear anything.  Should I elaborate on that?
 generic_1: Okay.  What would you like to talk about, friend?
 generic_2: Which mental health condition would you like to discuss?
@@ -32,7 +44,7 @@ how-about: How about I tell you {{ trigger }} {{ condition }}?
 wyl-r:  I didn't hear anything.  Should we talk about the {{ trigger }} of {{ condition }}?
 opinion: What do you think about that?
 opinion-r:  I can't hear you.  Do you have an opinion on that?  I'd love to know.
-elaborate_1:  Would you like me to elaborate?
+elaborate_1:  Would you like to discuss this topic more?
 elaborate_2:  Would you be interested in hearing more?
 elaborate-r: I didn't hear anything.  Should I elaborate on what we just talked about?
 continue_q:  Should we continue where we left off?

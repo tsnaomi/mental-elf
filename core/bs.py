@@ -211,22 +211,31 @@ class DialogueManager:
             self.history['last-sem-hub']=False
             if 'can_elaborate' in self.history.keys() and self.history.get('can_elaborate'):
                 self.history['last-affirm']=True
-                return self.render_template(choose(['sounds-familiar', 'affirm-and-elaborate'])),self.render_template('affirm-r')
+		elaborate = self.render_template(choose(['elaborate_1','elaborate_2']))
+		if raw == None:
+                    return self.render_template(choose(['sounds-familiar', 'affirm-and-elaborate']))+' '+elaborate,self.render_template('affirm-r')
+		senti = get_sentiment(str(raw))
+		if senti == 'negative':
+		    return self.render_template(choose(['negative_1','negative_2','negative_3']))+' '+elaborate,self.render_template('affirm-r')
+		elif senti == 'positive':
+		    return self.render_template(choose(['positive_1','positive_2','positive_3']))+' '+elaborate,self.render_template('affirm-r')
+		else:
+		    return self.render_template(choose(['sounds-familiar','affirm-and-elaborate']))+' '+elaborate,self.render_template('affirm-r')
             else:
                 self.history['last-affirm'] =False
                 self.history['last-elaborate'] = True
 		print('raw')
 		print(raw)
 		if raw == None:
-			return 'Thank you for sharing, I feel the same. ' + self.search_history()
+			return self.render_template(choose['sounds-familiar','affirm-and-elaborate']) +' ' +self.search_history()
 
 		senti = get_sentiment(str(raw))
 		if senti == 'negative':
-			return 'I feel sad for these people too. ' + self.search_history()
+			return self.render_template(choose(['negative_1','negative_2','negative_3']))+' '+ self.search_history()
 		elif senti == 'positive':
-			return 'I am glad that you feel positive. ' + self.search_history()
+			return self.render_template(choose(['positive_1','positive_2','positive_3']))+' ' + self.search_history()
 		else:
-               		return 'Thank you for sharing, I feel the same. ' + self.search_history() #self.render_template('just-affirm')
+               		return self.render_template(choose(['sounds-familiar','affirm-and-elaborate']))+' '+ self.search_history() #self.render_template('just-affirm')
 		
         elif 'last-affirm' in self.history.keys() and self.history.get('last-affirm'):
             print('i should be here')

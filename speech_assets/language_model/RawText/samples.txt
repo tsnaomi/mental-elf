@@ -1,3 +1,25 @@
 {ok here we go speak up please speak mode and more and more till the end of the universe|Text}
 {please render this random uttered sentence|Text}
 {sample sample sample sample sample|Text}
+{I think that's really interesting|Text}
+{That's interesting|Text}
+{I think that's really depressing|Text}
+{I think that's sad|Text}
+{That's really sad|Text}
+{That's really cool|Text}
+{I didn't know that|Text}
+{I don't care about that|Text}
+{That's difficult|Text}
+{I imagine that's difficult to handle|Text}
+{Sounds painful|Text}
+{That's surprising|Text}
+{I imagine that's hard to live with|Text}
+{That seems hard to live them|Text}
+{I can't imagine living like that|Text}
+{I know people who have depression|Text}
+{One of my friends suffers from that|Text}
+{I knew that already|Text}
+{I don't know what to think of that|Text}
+{I wish I could change that|Text}
+{I wish there was a cure for that|Text}
+{I want to know how to help people going through that|Text}
