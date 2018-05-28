@@ -9,4 +9,5 @@ dev.sh
 */config.py
 */dev.sh
 
+zappa_settings.json
 requirements.txt.old
