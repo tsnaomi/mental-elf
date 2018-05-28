@@ -18,7 +18,7 @@ help: I am happy to discuss mental health with you. What can I help you with?  F
 help-r: Are you still there?  Tell me what you'd like to talk about.  Otherwise, you can say 'Goodbye' to end the conversation.
 bye: Thank you for chatting. I hope you've learned something about mental health today.
 grounding_1: My understanding is that you'd like to hear {{ trigger }} {{ condition }}.  Is that right?
-grounding_2: Did I hear you correctly, that you would like to discuss {{ trigger }} {{ condition }}?
+grounding_2: Did I hear you correctly, that you would like {{ trigger }} {{ condition }}?
 grounding-r: Sorry, I didn't hear anything.  Should we talk about {{ condition }} {{ trigger }}?
 affirm-and-elaborate: Thank you for sharing. I've heard many people share that opinion.  Would you like to hear more about this topic?
 sounds-familiar: That sounds like sentiments I've heard from other users. Would you like to continue discussing this topic?
