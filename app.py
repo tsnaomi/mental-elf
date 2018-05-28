@@ -5,7 +5,7 @@ import subprocess as sp
 import click
 
 from flask import Flask, render_template
-from flask_ask import Ask, question, session, statement  # request
+from flask_ask import Ask, question, session, statement, request
 # from rasa_nlu.model import Interpreter  # Metadata
 # from rasa_core.agent import Agent
 # from rasa_core.interpreter import RasaNLUInterpreter
@@ -88,6 +88,16 @@ def give_forum(condition):
 def slot_filling(condition):
 
     return elf_response(session, 'slot_filling', {'condition': condition})
+
+
+@ask.intent('RawText', mapping={'condition': 'CONDITION'})
+def raw_text(condition):
+    
+    print(request)
+    print(request.intent.slots.Text.value)
+    Raw = request.intent.slots.Text.value
+    print(session)
+    return elf_response(session, 'affirmativepassive', {'raw' : Raw})
 
 
 @ask.intent('AMAZON.HelpIntent')

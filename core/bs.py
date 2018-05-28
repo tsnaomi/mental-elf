@@ -2,6 +2,7 @@
 import db  # DATABASE
 from random import choice as choose
 
+from get_sentiment import get_sentiment
 
 class DialogueManager:
 
@@ -200,7 +201,7 @@ class DialogueManager:
             self.history['slotfilling']='forum'
             return self.render_template(choose(['no_condition_1', 'no_condition_2']),trigger='a personal story about') ,self.render_template('no-condition-r',trigger='a personal story about') # RETURNS UTTERANCE
 
-    def affirmativepassive(self):
+    def affirmativepassive(self,raw=None):
         print(self.history.get('to-grounding'))
         print(self.history.get('lasttrigger'))
         print(self.history.get('last-sem-hub'))
@@ -214,7 +215,19 @@ class DialogueManager:
             else:
                 self.history['last-affirm'] =False
                 self.history['last-elaborate'] = True
-                return 'Thank you for sharing, I feel the same. ' + self.search_history() #self.render_template('just-affirm')
+		print('raw')
+		print(raw)
+		if raw == None:
+			return 'Thank you for sharing, I feel the same. ' + self.search_history()
+
+		senti = get_sentiment(str(raw))
+		if senti == 'negative':
+			return 'I feel sad for these people too. ' + self.search_history()
+		elif senti == 'positive':
+			return 'I am glad that you feel positive. ' + self.search_history()
+		else:
+               		return 'Thank you for sharing, I feel the same. ' + self.search_history() #self.render_template('just-affirm')
+		
         elif 'last-affirm' in self.history.keys() and self.history.get('last-affirm'):
             print('i should be here')
             print(self.history.get('lasttrigger'))
