@@ -92,12 +92,11 @@ def slot_filling(condition):
 
 @ask.intent('RawText', mapping={'condition': 'CONDITION'})
 def raw_text(condition):
-    
     print(request)
     print(request.intent.slots.Text.value)
     Raw = request.intent.slots.Text.value
     print(session)
-    return elf_response(session, 'affirmativepassive', {'raw' : Raw})
+    return elf_response(session, 'affirmativepassive', {'raw': Raw})
 
 
 @ask.intent('AMAZON.HelpIntent')
@@ -172,6 +171,7 @@ def upload_model(filename, update):
         `flask upload_model --update`
         `flask upload_model --filename MODEL_FN`
     '''
+    import pdb; pdb.set_trace()
     if update:
         click.echo('Updating model...')
         update_model(filename)

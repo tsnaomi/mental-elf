@@ -9,6 +9,29 @@ from boto3.dynamodb.conditions import Attr
 Conditions = db.Open_DynamoDB('Conditions')
 Anecdotes = db.Open_DynamoDB('Anecdotes')
 
+DIRTY_DICT = {
+    'a. s. d.': 'autism',
+    'a.s.d.': 'autism',
+    'asd': 'autism',
+    'a s d': 'autism',
+    's. a. d.': 'seasonal affective disorder',
+    's.a.d.': 'seasonal affective disorder',
+    's a d': 'seasonal affective disorder',
+    'sad': 'seasonal affective disorder',
+    'p. t. s. d.': 'posttraumatic stress disorder',
+    'p.t.s.d.': 'posttraumatic stress disorder',
+    'ptsd': 'posttraumatic stress disorder',
+    'p t s d': 'posttraumatic stress disorder',
+    'o. c. d.': 'obsessive compulsive disorder',
+    'o.c.d.': 'obsessive compulsive disorder',
+    'ocd': 'obsessive compulsive disorder',
+    'o c d': 'obsessive compulsive disorder',
+    'a. d. h. d.': 'attention deficit hyperactivity disorder',
+    'a.d.h.d.': 'attention deficit hyperactivity disorder',
+    'adhd': 'attention deficit hyperactivity disorder',
+    'a d h d': 'attention deficit hyperactivity disordr',
+    }
+
 
 class Condition:
 
@@ -31,7 +54,7 @@ class Anecdote:
         self.forum = kwargs['Anecdote']
 
 
-def get_condition(condition_name):
+def get_condition(condition_name, retry=True):
     '''Get a condition by its name.'''
     try:
         # unforunately, DynamoDB scans are case-sensitive...
@@ -44,8 +67,12 @@ def get_condition(condition_name):
         return Condition(**response['Items'].pop())
 
     except (TypeError, IndexError):
-        #  ould not recognize the  condition
-        return None
+        # could not recognize the  condition
+        if condition_name and retry:
+            long_name = DIRTY_DICT.get(condition_name.lower())
+
+            if long_name:
+                return get_condition(long_name, retry=False)
 
 
 def get_condition_for_anecdote(condition_name):

@@ -4,42 +4,6 @@
 			"invocationName": "mental elf",
 			"intents": [
 				{
-					"name": "RawText",
-					"slots": [
-						{
-							"name": "Text",
-							"type": "AMAZON.LITERAL"
-						}
-					],
-					"samples": [
-						"{ok here we go speak up please speak mode and more and more till the end of the universe|Text}",
-						"{please render this random uttered sentence|Text}",
-						"{sample sample sample sample sample|Text}",
-						"{I think that's really interesting|Text}",
-						"{That's interesting|Text}",
-						"{I think that's really depressing|Text}",
-						"{I think that's sad|Text}",
-						"{That's really sad|Text}",
-						"{That's really cool|Text}",
-						"{I didn't know that|Text}",
-						"{I don't care about that|Text}",
-						"{That's difficult|Text}",
-						"{I imagine that's difficult to handle|Text}",
-						"{Sounds painful|Text}",
-						"{That's surprising|Text}",
-						"{I imagine that's hard to live with|Text}",
-						"{That seems hard to live them|Text}",
-						"{I can't imagine living like that|Text}",
-						"{I know people who have depression|Text}",
-						"{One of my friends suffers from that|Text}",
-						"{I knew that already|Text}",
-						"{I don't know what to think of that|Text}",
-						"{I wish I could change that|Text}",
-						"{I wish there was a cure for that|Text}",
-						"{I want to know how to help people going through that|Text}"
-					]
-				},
-				{
 					"name": "AffirmativePassive",
 					"samples": [
 						"yes",
@@ -54,22 +18,33 @@
 					]
 				},
 				{
-					"name": "Negative",
+					"name": "AMAZON.CancelIntent",
 					"samples": [
-						"no",
-						"nah",
-						"nope",
-						"no thank you",
-						"I don't want to",
-						"That is not something I want",
-						"wrong",
-						"false",
-						"That's not something I want",
-						"That's not something I want to do"
+						"nevermind"
 					]
 				},
 				{
-					"name": "GiveSymptoms",
+					"name": "AMAZON.HelpIntent",
+					"samples": [
+						"i'm not sure",
+						"i don't understand",
+						"please help",
+						"help",
+						"help me",
+						"sorry",
+						"i don't know"
+					]
+				},
+				{
+					"name": "AMAZON.StopIntent",
+					"samples": [
+						"goodbye",
+						"exit",
+						"stop"
+					]
+				},
+				{
+					"name": "GiveForum",
 					"slots": [
 						{
 							"name": "CONDITION",
@@ -77,22 +52,26 @@
 						}
 					],
 					"samples": [
-						"what are the symptoms of {CONDITION}",
-						"symptoms of {CONDITION}",
-						"what symptoms does {CONDITION} have",
-						"what are the characteristic symptoms of {CONDITION}",
-						"symptoms for {CONDITION}",
-						"tell me about the symptoms of {CONDITION}",
-						"let's talk about the symptoms of {CONDITION}",
-						"give me the symptoms of {CONDITION}",
-						"will you give me the symptoms of {CONDITION}",
-						"can you tell me about the symptoms of {CONDITION}",
-						"how about the symptoms of {CONDITION}",
-						"{CONDITION} has what symptoms",
-						"symptoms",
-						"give symptoms",
-						"tell me symptoms",
-						"symptoms please"
+						"experience of {CONDITION}",
+						"tell me a story about a person with {CONDITION}",
+						"what is it like to have {CONDITION}",
+						"what is the experience of living with {CONDITION}",
+						"what is {CONDITION} like for average people",
+						"tell me about people with {CONDITION}",
+						"tell me an experience of people with {CONDITION}",
+						"do you have {CONDITION}",
+						"tell me a story from someone who has {CONDITION}",
+						"narrative from someone who has {CONDITION}",
+						"story of living with {CONDITION}",
+						"tell me of someone living with {CONDITION}",
+						"can you tell me an anecdote from someone who has {CONDITION}",
+						"anecdote about {CONDITION}",
+						"can you tell me about the experience of living with {CONDITION}",
+						"can you tell me what it's like to live with {CONDITION}",
+						"tell me the opinioin of someone who has {CONDITION}",
+						"give me a witness account of living with {CONDITION}",
+						"when people have {CONDITION} how does it affect their daily life",
+						"tell me a story"
 					]
 				},
 				{
@@ -133,13 +112,7 @@
 					]
 				},
 				{
-					"name": "AMAZON.CancelIntent",
-					"samples": [
-						"nevermind"
-					]
-				},
-				{
-					"name": "SlotFilling",
+					"name": "GiveSymptoms",
 					"slots": [
 						{
 							"name": "CONDITION",
@@ -147,34 +120,22 @@
 						}
 					],
 					"samples": [
-						"wanna know about {CONDITION}",
-						"I wanna know about {CONDITION}",
-						"{CONDITION} is what  want to know",
-						"{CONDITION} is what I want to know about",
-						"I want to know about {CONDITION}",
-						"what are {CONDITION}",
-						"what's {CONDITION}",
-						"tell me bout {CONDITION}",
-						"{CONDITION} please",
-						"{CONDITION}",
-						"it's called {CONDITION}",
-						"can you tell me about {CONDITION}",
-						"the condition is {CONDITION}",
-						"what is {CONDITION} like",
-						"tell me about {CONDITION}",
-						"what is {CONDITION}"
-					]
-				},
-				{
-					"name": "AMAZON.HelpIntent",
-					"samples": [
-						"i'm not sure",
-						"i don't understand",
-						"please help",
-						"help",
-						"help me",
-						"sorry",
-						"i don't know"
+						"what are the symptoms of {CONDITION}",
+						"symptoms of {CONDITION}",
+						"what symptoms does {CONDITION} have",
+						"what are the characteristic symptoms of {CONDITION}",
+						"symptoms for {CONDITION}",
+						"tell me about the symptoms of {CONDITION}",
+						"let's talk about the symptoms of {CONDITION}",
+						"give me the symptoms of {CONDITION}",
+						"will you give me the symptoms of {CONDITION}",
+						"can you tell me about the symptoms of {CONDITION}",
+						"how about the symptoms of {CONDITION}",
+						"{CONDITION} has what symptoms",
+						"symptoms",
+						"give symptoms",
+						"tell me symptoms",
+						"symptoms please"
 					]
 				},
 				{
@@ -208,7 +169,58 @@
 					]
 				},
 				{
-					"name": "GiveForum",
+					"name": "Negative",
+					"samples": [
+						"no",
+						"nah",
+						"nope",
+						"no thank you",
+						"I don't want to",
+						"That is not something I want",
+						"wrong",
+						"false",
+						"That's not something I want",
+						"That's not something I want to do"
+					]
+				},
+				{
+					"name": "RawText",
+					"slots": [
+						{
+							"name": "Text",
+							"type": "AMAZON.LITERAL"
+						}
+					],
+					"samples": [
+						"{ok here we go speak up please speak mode and more and more till the end of the universe|Text}",
+						"{please render this random uttered sentence|Text}",
+						"{sample sample sample sample sample|Text}",
+						"{I think that's really interesting|Text}",
+						"{That's interesting|Text}",
+						"{I think that's really depressing|Text}",
+						"{I think that's sad|Text}",
+						"{That's really sad|Text}",
+						"{That's really cool|Text}",
+						"{I didn't know that|Text}",
+						"{I don't care about that|Text}",
+						"{That's difficult|Text}",
+						"{I imagine that's difficult to handle|Text}",
+						"{Sounds painful|Text}",
+						"{That's surprising|Text}",
+						"{I imagine that's hard to live with|Text}",
+						"{That seems hard to live them|Text}",
+						"{I can't imagine living like that|Text}",
+						"{I know people who have depression|Text}",
+						"{One of my friends suffers from that|Text}",
+						"{I knew that already|Text}",
+						"{I don't know what to think of that|Text}",
+						"{I wish I could change that|Text}",
+						"{I wish there was a cure for that|Text}",
+						"{I want to know how to help people going through that|Text}"
+					]
+				},
+				{
+					"name": "SlotFilling",
 					"slots": [
 						{
 							"name": "CONDITION",
@@ -216,34 +228,22 @@
 						}
 					],
 					"samples": [
-						"experience of {CONDITION}",
-						"tell me a story about a person with {CONDITION}",
-						"what is it like to have {CONDITION}",
-						"what is the experience of living with {CONDITION}",
-						"what is {CONDITION} like for average people",
-						"tell me about people with {CONDITION}",
-						"tell me an experience of people with {CONDITION}",
-						"do you have {CONDITION}",
-						"tell me a story from someone who has {CONDITION}",
-						"narrative from someone who has {CONDITION}",
-						"story of living with {CONDITION}",
-						"tell me of someone living with {CONDITION}",
-						"can you tell me an anecdote from someone who has {CONDITION}",
-						"anecdote about {CONDITION}",
-						"can you tell me about the experience of living with {CONDITION}",
-						"can you tell me what it's like to live with {CONDITION}",
-						"tell me the opinioin of someone who has {CONDITION}",
-						"give me a witness account of living with {CONDITION}",
-						"when people have {CONDITION} how does it affect their daily life",
-						"tell me a story"
-					]
-				},
-				{
-					"name": "AMAZON.StopIntent",
-					"samples": [
-						"goodbye",
-						"exit",
-						"stop"
+						"wanna know about {CONDITION}",
+						"I wanna know about {CONDITION}",
+						"{CONDITION} is what  want to know",
+						"{CONDITION} is what I want to know about",
+						"I want to know about {CONDITION}",
+						"what are {CONDITION}",
+						"what's {CONDITION}",
+						"tell me bout {CONDITION}",
+						"{CONDITION} please",
+						"{CONDITION}",
+						"it's called {CONDITION}",
+						"can you tell me about {CONDITION}",
+						"the condition is {CONDITION}",
+						"what is {CONDITION} like",
+						"tell me about {CONDITION}",
+						"what is {CONDITION}"
 					]
 				}
 			],
@@ -348,8 +348,14 @@
 						},
 						{
 							"name": {
-								"value": "P. T. S. D.",
+								"value": "posttraumatic stress disorder",
 								"synonyms": [
+									"P. T. S. D.",
+									"P.T.S.D.",
+									"p. t. s. d.",
+									"p.t.s.d.",
+									"PTSD",
+									"ptsd",
 									"post traumatic stress",
 									"posttraumatic stress",
 									"post-traumatic stress",
@@ -449,22 +455,29 @@
 						},
 						{
 							"name": {
-								"value": "O. C. D.",
+								"value": "obsessive compulsive disorder",
 								"synonyms": [
+									"O. C. D.",
 									"o. c. d.",
 									"O C D",
 									"OCD",
-									"obsessive compulsive disorder",
+									"o.c.d.",
+									"ocd",
 									"obsessive compulsive"
 								]
 							}
 						},
 						{
 							"name": {
-								"value": "A. D. H. D.",
+								"value": "attention deficit hyperactivity disorder",
 								"synonyms": [
-									"attention deficit hyperactivity disorder",
 									"attention deficit disorder",
+									"A.D.H.D.",
+									"A. D. H. D.",
+									"ADHD",
+									"adhd",
+									"a.d.d.",
+									"a. d. d.",
 									"A. D. D.",
 									"attention deficit"
 								]
