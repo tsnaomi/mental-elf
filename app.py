@@ -6,7 +6,7 @@ import click
 
 from flask import Flask, render_template
 from flask_ask import Ask, question, session, statement, request
-# from rasa_nlu.model import Interpreter  # Metadata
+from rasa_nlu.model import Interpreter  # Metadata
 # from rasa_core.agent import Agent
 # from rasa_core.interpreter import RasaNLUInterpreter
 
@@ -19,14 +19,6 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py')
 ask = Ask(app, '/')  # Alexa integration
 dm = DialogueManager(render_template)
-
-
-# RASA NLU model --------------------------------------------------------------
-
-# model_directory_name = "../trainElfNLU/projects/default/myModel2/"
-# # metadata = Metadata.load(model_directory_name)
-# # interpreter = Interpreter.load(metadata,RASAConfig("config_spacy.json"))
-# interpreter = Interpreter.load(model_directory_name)
 
 
 # view helpers ----------------------------------------------------------------
@@ -130,33 +122,50 @@ def negative():
     return elf_response(session, 'negative', {})
 
 
-# @ask.intent('RawText', mapping={'text': 'Text'})
-# def do_NLU(text):
-#     data = request.intent.slots.Text.value
-#     dic = interpreter.parse(data)
-#     intent = dic['intent']['name']
-#     # raw = dic['text'] #difficult - see if this matches samples, if not check
-#     # which gives the highest score in entities, add to interaction model json,
-#     # upload before next round, retrain nlu can add a reinforcement style
-#     # strategy by asking user if returned answer was correct
-#     if dic['entities']:
-#         condition = str(dic['entities'][0]['value'])
-#         # slottype = str(dic['entities'][0]['entity'])
+# RASA NLU model --------------------------------------------------------------
 
-#         # get disorder list for DB table, check if it exists and then proceed
-#         # else return sorry, not in table, ask for another
-#         print(session.attributes)
-#         if intent == 'GiveOverview':
-#             return give_overview(condition)
-#         elif intent == 'GiveSymptoms':
-#             return give_overview(condition)
-#         elif intent == 'GiveTreatment':
-#             return give_treatment(condition)
-#         elif intent == 'GivePrevalence':
-#             return give_prevalence(condition)
-#     else:
-#         print("unrecognized entity and slot type")
-#         return statement('All your base are belong to us')
+model_directory_name = "../trainElfNLU/projects/default/myModel2/"
+# metadata = Metadata.load(model_directory_name)
+# interpreter = Interpreter.load(metadata,RASAConfig("config_spacy.json"))
+interpreter = Interpreter.load(model_directory_name)
+
+
+INTENTS = {
+    'GiveOverview': give_overview,
+    'GiveSymptoms': give_symptoms,
+    'GiveTreatment': give_treatment,
+    # 'GiveForum': give_forum,
+    # 'SlotFilling': slot_filling,
+    }
+
+
+@ask.intent('RawText', mapping={'text': 'Text'})
+def do_NLU(text):
+    data = request.intent.slots.Text.value
+    dic = interpreter.parse(data)
+    intent = dic['intent']['name']
+    # raw = dic['text'] #difficult - see if this matches samples, if not check
+    # which gives the highest score in entities, add to interaction model json,
+    # upload before next round, retrain nlu can add a reinforcement style
+    # strategy by asking user if returned answer was correct
+    if dic['entities']:
+        condition = str(dic['entities'][0]['value'])
+        # slottype = str(dic['entities'][0]['entity'])
+
+        # get disorder list for DB table, check if it exists and then proceed
+        # else return sorry, not in table, ask for another
+        print(session.attributes)
+
+        try:
+            return INTENTS[intent](condition)
+
+        except KeyError:
+            pass
+
+    else:
+        # print("unrecognized entity and slot type")
+        # return statement('All your base are belong to us')
+        return help()
 
 
 # custom CLI commands ---------------------------------------------------------
