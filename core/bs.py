@@ -170,8 +170,11 @@ class DialogueManager:
 
                 if 'elaborate' in self.history.keys() and self.history.get('elaborate'):
                     self.history['elaborate']=False
-                    return condition.forum.split('.',3)[3]  # RETURNS UTTERANCE
-                else:
+		    try:
+                        return condition.forum.split('.',3)[3]  # RETURNS UTTERANCE
+    		    except IndexError:
+			return condition.forum.split('.',3)[2] 
+	        else:
                     self.history['last-sem-hub']=True
                     next_choice = choose(['elaborate_1','elaborate_2'])
                     if next_choice == 'elaborate_1' or next_choice == 'elaborate_2':
@@ -190,7 +193,7 @@ class DialogueManager:
                         next_reprompt = self.render_template('opinion-r')
                     next_move = self.render_template(next_choice)
                     self.history['forum']=True
-                    return '.'.join(condition.forum.split('.',3)[:3])+'. '+next_move, next_reprompt
+                    return 'Here is a story from someone living with this condition. '+ '.'.join(condition.forum.split('.',3)[:3])+'. '+next_move, next_reprompt
 
             else:  # haven't grounded yet
                 self.history['to-grounding']=True
@@ -227,7 +230,7 @@ class DialogueManager:
 		print('raw')
 		print(raw)
 		if raw == None:
-		    return self.render_template(choose['sounds-familiar','affirm-and-elaborate']) +' ' +self.search_history()
+		    return self.render_template(choose(['sounds-familiar','affirm-and-elaborate'])) +' ' +self.search_history()
 
 		senti = get_sentiment(str(raw))
 		if senti == 'negative':
@@ -254,7 +257,7 @@ class DialogueManager:
                 return elaborate + ' ' + historysearch, self.render_template('wyl-r', trigger='the symptoms of',condition=self.history['lastcondition'])
             elif 'lasttrigger' in self.history.keys() and self.history.get('lasttrigger')=='treatment':
                 self.history['elaborate']=True
-                elaborate = self.give_treatment(self.history['lastcondition'])
+                elaborate = self.give_treatment(self.history['lastcondition'])[0]
                 return elaborate + ' ' + historysearch, self.render_template('wyl-r', trigger='the treatment for',condition=self.history['lastcondition'])
             else:
                 self.history['elaborate']=True
