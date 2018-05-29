@@ -171,7 +171,6 @@ def upload_model(filename, update):
         `flask upload_model --update`
         `flask upload_model --filename MODEL_FN`
     '''
-    import pdb; pdb.set_trace()
     if update:
         click.echo('Updating model...')
         update_model(filename)
